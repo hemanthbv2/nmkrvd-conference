@@ -221,7 +221,7 @@ a:hover { color: var(--accent-highlight); }
 .hero-full-name { font-family: var(--font-heading); font-size: clamp(0.95rem, 2vw, 1.3rem); font-weight: 500; color: var(--text-secondary); letter-spacing: 1px; margin-bottom: 12px; }
 .hero-tagline { font-size: clamp(0.95rem, 1.8vw, 1.15rem); font-weight: 400; color: var(--text-secondary); margin-bottom: 28px; }
 
-/* ── CONFERENCE & IT SPECIFIC MOVING BACKGROUND GRAPHICS ── */
+/* ── ADVANCED TECH-ORIENTED MOVING BACKGROUND GRAPHICS ── */
 .bg-graphic-elements {
   position: absolute;
   top: 0;
@@ -233,26 +233,26 @@ a:hover { color: var(--accent-highlight); }
   z-index: 1;
 }
 
-/* 1. Floating Code Terminal / IDE Window (Top-Right) */
+/* 1. IDE Code Terminal Window (Top-Right) */
 .bg-it-terminal {
   position: absolute;
   top: 8%;
-  right: 5%;
-  width: 260px;
-  background: rgba(10, 20, 42, 0.7);
-  border: 1px solid rgba(0, 229, 255, 0.3);
+  right: 4%;
+  width: 250px;
+  background: rgba(8, 16, 36, 0.78);
+  border: 1px solid rgba(0, 229, 255, 0.35);
   border-radius: 10px;
   padding: 12px 14px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 229, 255, 0.15);
-  backdrop-filter: blur(12px);
-  opacity: 0.65;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 229, 255, 0.18);
+  backdrop-filter: blur(14px);
+  opacity: 0.75;
   animation: floatTerminal 18s ease-in-out infinite alternate;
 }
 .terminal-header {
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   padding-bottom: 6px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -261,154 +261,180 @@ a:hover { color: var(--accent-highlight); }
 .terminal-dot.yellow { background: #eab308; }
 .terminal-dot.green { background: #22c55e; }
 .terminal-title { font-size: 0.65rem; color: var(--text-muted); font-family: monospace; margin-left: 4px; }
-.terminal-code {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 0.7rem;
-  line-height: 1.6;
-}
+.terminal-code { font-family: 'Courier New', Courier, monospace; font-size: 0.68rem; line-height: 1.6; }
 .code-line { display: block; white-space: nowrap; overflow: hidden; }
 .code-cyan { color: #00e5ff; }
 .code-purple { color: #c084fc; }
 .code-green { color: #4ade80; }
 .code-muted { color: #64748b; }
 
-/* 2. Floating Academic Research Paper Manuscript (Bottom-Left) */
-.bg-research-paper {
+/* 2. Neural Network Tensor Graph (Deep Learning DAG) (Bottom-Left) */
+.bg-neural-graph {
   position: absolute;
-  bottom: 10%;
-  left: 5%;
-  width: 190px;
-  height: 240px;
-  background: rgba(15, 25, 52, 0.7);
+  bottom: 8%;
+  left: 4%;
+  width: 220px;
+  background: rgba(12, 20, 44, 0.75);
   border: 1px solid rgba(168, 85, 247, 0.35);
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4), 0 0 25px rgba(168, 85, 247, 0.15);
-  backdrop-filter: blur(12px);
-  opacity: 0.6;
-  transform: rotate(-6deg);
-  animation: floatPaper 20s ease-in-out infinite alternate;
+  border-radius: 10px;
+  padding: 12px 14px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(168, 85, 247, 0.2);
+  backdrop-filter: blur(14px);
+  opacity: 0.75;
+  animation: floatNeural 20s ease-in-out infinite alternate;
 }
-.paper-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.55rem;
+.tech-card-label {
+  font-family: monospace;
+  font-size: 0.62rem;
   font-weight: 700;
-  color: #00e5ff;
-  background: rgba(0, 229, 255, 0.12);
-  padding: 2px 6px;
-  border-radius: 4px;
-  margin-bottom: 10px;
+  color: #a855f7;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
-}
-.paper-line {
-  height: 4px;
-  border-radius: 2px;
-  background: rgba(255, 255, 255, 0.1);
-  margin-bottom: 8px;
-}
-.paper-line.title { width: 85%; height: 6px; background: linear-gradient(90deg, #a855f7, #00e5ff); margin-bottom: 12px; }
-.paper-line.l1 { width: 95%; }
-.paper-line.l2 { width: 80%; }
-.paper-line.l3 { width: 90%; }
-.paper-line.l4 { width: 65%; }
-.paper-line.l5 { width: 85%; }
-.paper-stamp {
-  margin-top: 14px;
-  display: flex;
-  justify-content: flex-end;
-}
-.paper-seal {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 1px dashed #22c55e;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 0.6rem;
-  color: #22c55e;
-  transform: rotate(15deg);
+  gap: 6px;
 }
-
-/* 3. AI CPU Microchip Core with Circuit Traces (Center-Left) */
-.bg-cpu-core {
-  position: absolute;
-  top: 22%;
-  left: 8%;
-  width: 90px;
-  height: 90px;
-  background: rgba(10, 22, 45, 0.8);
-  border: 1.5px solid rgba(0, 229, 255, 0.4);
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(0, 229, 255, 0.3), inset 0 0 15px rgba(0, 229, 255, 0.15);
+.tech-card-label::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #a855f7;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #a855f7;
+}
+.neural-nodes-canvas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 6px;
+}
+.neural-layer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.65;
-  animation: floatCpu 15s ease-in-out infinite alternate;
+  gap: 8px;
 }
-.cpu-pins {
-  position: absolute;
-  width: 100%; height: 100%;
-  pointer-events: none;
+.neural-node {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0, 229, 255, 0.2);
+  border: 1.5px solid #00e5ff;
+  box-shadow: 0 0 8px #00e5ff;
+  animation: nodeFire 3s ease-in-out infinite alternate;
 }
-.cpu-pins::before, .cpu-pins::after {
-  content: '';
-  position: absolute;
-  background: rgba(0, 229, 255, 0.4);
+.neural-layer:nth-child(2) .neural-node {
+  border-color: #a855f7;
+  box-shadow: 0 0 8px #a855f7;
+  animation-delay: -1s;
 }
-.cpu-text {
-  font-family: monospace;
-  font-size: 0.65rem;
-  font-weight: 800;
-  color: #00e5ff;
-  letter-spacing: 1px;
+.neural-layer:nth-child(3) .neural-node {
+  border-color: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation-delay: -2s;
 }
-.cpu-sub {
-  font-size: 0.5rem;
-  color: var(--text-muted);
-  font-weight: 600;
+.neural-link-line {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, rgba(0, 229, 255, 0.5), rgba(168, 85, 247, 0.5));
+  margin: 0 6px;
 }
 
-/* 4. Global International Conference Wireframe Globe (Center-Right) */
-.bg-conference-globe {
+/* 3. Quantum Logic Circuit Register (Top-Left) */
+.bg-quantum-circuit {
   position: absolute;
-  top: 45%;
-  right: 8%;
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  border: 1px solid rgba(168, 85, 247, 0.3);
-  box-shadow: 0 0 30px rgba(168, 85, 247, 0.2);
-  opacity: 0.55;
-  animation: floatGlobe 16s ease-in-out infinite alternate, rotateGlobe 30s linear infinite;
+  top: 18%;
+  left: 5%;
+  width: 210px;
+  background: rgba(8, 20, 40, 0.75);
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  border-radius: 10px;
+  padding: 12px 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(0, 229, 255, 0.15);
+  backdrop-filter: blur(14px);
+  opacity: 0.75;
+  animation: floatQuantum 16s ease-in-out infinite alternate;
+}
+.quantum-circuit-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+}
+.q-wire {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 6px;
+  font-family: monospace;
+  font-size: 0.65rem;
+  color: var(--text-secondary);
 }
-.globe-lat {
+.q-gate {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(0, 229, 255, 0.15);
+  border: 1px solid #00e5ff;
+  color: #00e5ff;
+  font-weight: 700;
+  font-size: 0.65rem;
+}
+.q-gate.gate-cnot {
+  border-color: #a855f7;
+  color: #a855f7;
+  background: rgba(168, 85, 247, 0.15);
+}
+.q-wire-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* 4. HPC Cloud Server Module (Center-Right) */
+.bg-server-blade {
   position: absolute;
+  top: 45%;
+  right: 5%;
+  width: 180px;
+  background: rgba(10, 18, 38, 0.8);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 8px;
+  padding: 10px 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(16, 185, 129, 0.15);
+  backdrop-filter: blur(14px);
+  opacity: 0.7;
+  animation: floatServer 17s ease-in-out infinite alternate;
+}
+.server-status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.server-leds {
+  display: flex;
+  gap: 5px;
+}
+.server-led {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.server-led.l-green { background: #10b981; box-shadow: 0 0 6px #10b981; animation: blinkLed 2s infinite; }
+.server-led.l-cyan { background: #00e5ff; box-shadow: 0 0 6px #00e5ff; animation: blinkLed 1.4s infinite; }
+.server-led.l-purple { background: #a855f7; box-shadow: 0 0 6px #a855f7; }
+.server-load-bar {
   width: 100%;
-  height: 50%;
-  border-radius: 50%;
-  border: 1px dashed rgba(0, 229, 255, 0.3);
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 6px;
 }
-.globe-long {
-  position: absolute;
-  width: 50%;
+.server-load-progress {
+  width: 72%;
   height: 100%;
-  border-radius: 50%;
-  border: 1px dashed rgba(0, 229, 255, 0.3);
-}
-.globe-core-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #00e5ff;
-  box-shadow: 0 0 12px #00e5ff;
+  background: linear-gradient(90deg, #10b981, #00e5ff);
+  border-radius: 2px;
 }
 
 /* 5. Glowing Digital Circuit Board Energy Stream (Bottom) */
@@ -433,26 +459,30 @@ a:hover { color: var(--accent-highlight); }
 .circuit-line-2 { top: 60%; right: 0; width: 75%; animation-duration: 11s; animation-delay: -3s; }
 .circuit-line-3 { top: 85%; left: 10%; width: 55%; animation-duration: 7s; animation-delay: -5s; }
 
-/* KEYFRAME ANIMATIONS FOR CONFERENCE & IT BG GRAPHICS */
+/* KEYFRAME ANIMATIONS FOR TECH ELEMENTS */
 @keyframes floatTerminal {
   0% { transform: translateY(0) rotate(0deg); }
-  100% { transform: translateY(-24px) rotate(-3deg); }
+  100% { transform: translateY(-22px) rotate(-2deg); }
 }
-@keyframes floatPaper {
-  0% { transform: translateY(0) rotate(-6deg); }
-  100% { transform: translateY(22px) rotate(-2deg); }
+@keyframes floatNeural {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(20px) rotate(2deg); }
 }
-@keyframes floatCpu {
-  0% { transform: translateY(0) rotate(0deg) scale(1); }
-  100% { transform: translateY(-18px) rotate(6deg) scale(1.05); }
+@keyframes floatQuantum {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-18px) rotate(2deg); }
 }
-@keyframes floatGlobe {
+@keyframes floatServer {
   0% { transform: translateY(0) scale(1); }
-  100% { transform: translateY(20px) scale(1.08); }
+  100% { transform: translateY(18px) scale(1.03); }
 }
-@keyframes rotateGlobe {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes nodeFire {
+  0% { transform: scale(0.9); opacity: 0.5; }
+  100% { transform: scale(1.3); opacity: 1; }
+}
+@keyframes blinkLed {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
 @keyframes circuitFlow {
   0% { opacity: 0; transform: translateX(-40%); }
@@ -713,7 +743,7 @@ a:hover { color: var(--accent-highlight); }
         <div class="hero-glow hero-glow-2"></div>
         <div class="hero-glow hero-glow-3"></div>
 
-        <!-- CONFERENCE & IT MOVING BACKGROUND GRAPHICS -->
+        <!-- ADVANCED TECH-ORIENTED MOVING BACKGROUND GRAPHICS -->
         <div class="bg-graphic-elements">
           <!-- 1. Floating Code Terminal / IDE Window -->
           <div class="bg-it-terminal">
@@ -732,31 +762,67 @@ a:hover { color: var(--accent-highlight); }
             </div>
           </div>
 
-          <!-- 2. Floating Academic Research Paper Manuscript -->
-          <div class="bg-research-paper">
-            <div class="paper-badge">IEEE Conf Paper</div>
-            <div class="paper-line title"></div>
-            <div class="paper-line l1"></div>
-            <div class="paper-line l2"></div>
-            <div class="paper-line l3"></div>
-            <div class="paper-line l4"></div>
-            <div class="paper-line l5"></div>
-            <div class="paper-stamp">
-              <div class="paper-seal">✓ Peer Reviewed</div>
+          <!-- 2. Neural Network Tensor Graph (Deep Learning DAG) -->
+          <div class="bg-neural-graph">
+            <div class="tech-card-label">Neural Tensor DAG</div>
+            <div class="neural-nodes-canvas">
+              <div class="neural-layer">
+                <div class="neural-node"></div>
+                <div class="neural-node"></div>
+                <div class="neural-node"></div>
+              </div>
+              <div class="neural-link-line"></div>
+              <div class="neural-layer">
+                <div class="neural-node"></div>
+                <div class="neural-node"></div>
+                <div class="neural-node"></div>
+                <div class="neural-node"></div>
+              </div>
+              <div class="neural-link-line"></div>
+              <div class="neural-layer">
+                <div class="neural-node"></div>
+                <div class="neural-node"></div>
+              </div>
             </div>
           </div>
 
-          <!-- 3. AI CPU Microchip Core with Circuit Traces -->
-          <div class="bg-cpu-core">
-            <div class="cpu-text">AI·CPU</div>
-            <div class="cpu-sub">QUANTUM</div>
+          <!-- 3. Quantum Logic Circuit Register -->
+          <div class="bg-quantum-circuit">
+            <div class="tech-card-label" style="color:#00e5ff;">Quantum Register |q⟩</div>
+            <div class="quantum-circuit-rows">
+              <div class="q-wire">
+                <span>|q0⟩</span>
+                <span class="q-gate">H</span>
+                <span class="q-wire-line"></span>
+                <span class="q-gate gate-cnot">•</span>
+                <span class="q-wire-line"></span>
+              </div>
+              <div class="q-wire">
+                <span>|q1⟩</span>
+                <span class="q-wire-line"></span>
+                <span class="q-gate gate-cnot">⊕</span>
+                <span class="q-wire-line"></span>
+                <span class="q-gate">X</span>
+              </div>
+            </div>
           </div>
 
-          <!-- 4. Global International Conference Wireframe Globe -->
-          <div class="bg-conference-globe">
-            <div class="globe-lat"></div>
-            <div class="globe-long"></div>
-            <div class="globe-core-dot"></div>
+          <!-- 4. HPC Cloud Server Module -->
+          <div class="bg-server-blade">
+            <div class="server-status-bar">
+              <span class="tech-card-label" style="color:#10b981;margin-bottom:0;">HPC Node-01</span>
+              <div class="server-leds">
+                <span class="server-led l-green"></span>
+                <span class="server-led l-cyan"></span>
+                <span class="server-led l-purple"></span>
+              </div>
+            </div>
+            <div style="font-family:monospace;font-size:0.6rem;color:var(--text-muted);display:flex;justify-content:space-between;">
+              <span>LOAD</span><span>72% ECO</span>
+            </div>
+            <div class="server-load-bar">
+              <div class="server-load-progress"></div>
+            </div>
           </div>
 
           <!-- 5. Circuit Energy Wave Stream -->
