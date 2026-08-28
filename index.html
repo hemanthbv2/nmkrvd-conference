@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICIQSI 2027 — International Conference on Intelligent Computing, Quantum Technologies & Sustainable Innovations</title>
+  <meta name="description" content="ICIQSI 2027 — IEEE International Conference on Intelligent Computing, Quantum Technologies, and Sustainable Innovations. September 15–16, 2027 at NMKRV College, Bengaluru.">
+  <meta name="keywords" content="IEEE Conference, ICIQSI 2027, Intelligent Computing, Quantum Technologies, Sustainable Innovations, NMKRV College, Bengaluru">
+  <meta name="author" content="NMKRV College, Bengaluru">
+  <meta property="og:title" content="ICIQSI 2027 — IEEE International Conference">
+  <meta property="og:description" content="International Conference on Intelligent Computing, Quantum Technologies, and Sustainable Innovations | September 15–16, 2027 | NMKRV College, Bengaluru">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230a192f' stroke='%2300b4d8' stroke-width='2'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-size='12' font-weight='bold' fill='%2300e5ff' font-family='sans-serif'%3EIC%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   PALETTE 1: "CYBER NEON & OCEAN BREEZE" (Electric Cyan + Deep Sky Blue + Violet)
+   ============================================================ */
+:root {
+  --bg-primary: #060b18;
+  --bg-secondary: #0a1628;
+  --bg-card: rgba(15, 25, 50, 0.68);
+  --bg-glass: rgba(255, 255, 255, 0.04);
+  --bg-glass-hover: rgba(255, 255, 255, 0.08);
+  --accent-primary: #00e5ff;
+  --accent-secondary: #00b4d8;
+  --accent-tertiary: #7c3aed;
+  --accent-highlight: #a855f7;
+  --accent-pink: #ec4899;
+  --accent-green: #10b981;
+  --gradient-hero: linear-gradient(135deg, #0a0f1c 0%, #0d1b3e 40%, #1a0a2e 100%);
+  --gradient-accent: linear-gradient(135deg, #00b4d8, #7c3aed);
+  --gradient-accent-2: linear-gradient(135deg, #7c3aed, #ec4899);
+  --gradient-text: linear-gradient(135deg, #00e5ff 0%, #38bdf8 50%, #a855f7 100%);
+  --gradient-glow: linear-gradient(135deg, rgba(0, 229, 255, 0.2), rgba(124, 58, 237, 0.2));
+  --text-primary: #f0f4ff;
+  --text-secondary: #94a3c4;
+  --text-muted: #5a6a8a;
+  --border-glass: rgba(255, 255, 255, 0.09);
+  --border-glow: rgba(0, 229, 255, 0.35);
+  --container-max: 1200px;
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --shadow-glow: 0 0 35px rgba(0, 229, 255, 0.22);
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--accent-primary); text-decoration: none; transition: color var(--transition-fast); }
+a:hover { color: var(--accent-highlight); }
+::selection { background: var(--accent-tertiary); color: #fff; }
+.container { max-width: var(--container-max); margin: 0 auto; padding: 0 24px; }
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+.glass-card:hover { transform: translateY(-4px); border-color: var(--border-glow); box-shadow: var(--shadow-glow); }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px;
+  font-family: var(--font-body); font-size: 0.95rem; font-weight: 600;
+  border-radius: 50px; border: none; cursor: pointer;
+  transition: all var(--transition-base); text-decoration: none; position: relative; overflow: hidden;
+}
+.btn-primary { background: var(--gradient-accent); color: #fff; box-shadow: 0 4px 20px rgba(0, 180, 216, 0.35); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0, 229, 255, 0.5); color: #fff; }
+.btn-secondary { background: transparent; color: var(--text-primary); border: 1px solid var(--border-glass); backdrop-filter: blur(10px); }
+.btn-secondary:hover { background: var(--bg-glass-hover); border-color: var(--accent-primary); color: var(--accent-primary); transform: translateY(-2px); }
+
+/* ── NAVBAR ── */
+.navbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 16px 0; transition: all var(--transition-base); background: rgba(6, 11, 24, 0.94); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-glass); }
+.navbar .container { display: flex; align-items: center; justify-content: space-between; }
+.nav-brand { display: flex; align-items: center; gap: 12px; font-family: var(--font-heading); font-weight: 700; font-size: 1.3rem; color: var(--text-primary); text-decoration: none; }
+.nav-brand-text { display: flex; flex-direction: column; }
+.nav-brand-name { font-size: 1.1rem; line-height: 1.2; background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.nav-brand-sub { font-size: 0.65rem; font-weight: 500; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; }
+.nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
+.nav-links a { padding: 8px 16px; font-size: 0.85rem; font-weight: 500; color: var(--text-secondary); border-radius: 8px; transition: all var(--transition-fast); text-decoration: none; }
+.nav-links a:hover, .nav-links a.active { color: var(--accent-primary); background: rgba(0, 229, 255, 0.09); }
+.nav-cta { padding: 10px 24px !important; background: var(--gradient-accent) !important; color: #fff !important; border-radius: 50px !important; font-weight: 600 !important; }
+.nav-cta:hover { box-shadow: 0 4px 20px rgba(0, 229, 255, 0.4); transform: translateY(-1px); }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 8px; }
+.nav-toggle span { width: 24px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: all var(--transition-base); }
+
+/* ── PALETTE BADGE ── */
+.palette-indicator {
+  position: fixed; bottom: 20px; right: 20px; z-index: 1000;
+  background: rgba(6, 11, 24, 0.92); border: 1px solid var(--accent-primary);
+  border-radius: 16px; padding: 12px 18px; box-shadow: 0 8px 30px rgba(0,0,0,0.5), 0 0 20px rgba(0,229,255,0.2);
+  backdrop-filter: blur(16px); max-width: 320px; font-size: 0.78rem;
+  transition: transform 0.3s ease;
+}
+.palette-indicator:hover { transform: translateY(-3px); }
+.palette-badge-title { display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+.palette-swatches { display: flex; gap: 6px; margin: 6px 0 8px; }
+.palette-swatch { width: 18px; height: 18px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.3); }
+.palette-hint { color: var(--text-muted); font-size: 0.7rem; line-height: 1.3; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  background: var(--gradient-hero); position: relative; overflow: hidden; padding-top: 80px;
+}
+#particle-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+.hero-glow { position: absolute; border-radius: 50%; filter: blur(110px); opacity: 0.35; z-index: 0; }
+.hero-glow-1 { width: 520px; height: 520px; background: var(--accent-tertiary); top: -10%; right: -5%; }
+.hero-glow-2 { width: 440px; height: 440px; background: var(--accent-secondary); bottom: -5%; left: -5%; }
+.hero-glow-3 { width: 320px; height: 320px; background: var(--accent-primary); top: 40%; left: 30%; opacity: 0.18; }
+.hero-content { position: relative; z-index: 2; text-align: center; max-width: 920px; padding: 0 24px; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 229, 255, 0.12); border: 1px solid rgba(0, 229, 255, 0.4); color: var(--accent-primary); padding: 8px 20px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 28px; }
+.hero-badge .ieee-dot { width: 8px; height: 8px; background: var(--accent-primary); border-radius: 50%; animation: pulse-dot 2s ease-in-out infinite; }
+@keyframes pulse-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.6); } }
+.hero-title { font-family: var(--font-heading); font-size: clamp(2.2rem, 5.5vw, 4.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 10px; }
+.hero-acronym { font-family: var(--font-heading); font-size: clamp(3.2rem, 8.5vw, 6.8rem); font-weight: 900; background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -2px; display: block; margin-bottom: 6px; }
+.hero-full-name { font-family: var(--font-heading); font-size: clamp(0.95rem, 2vw, 1.35rem); font-weight: 500; color: var(--text-secondary); letter-spacing: 1px; margin-bottom: 16px; }
+.hero-tagline { font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 400; color: var(--text-secondary); margin-bottom: 32px; }
+.hero-meta { display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; margin-bottom: 40px; }
+.hero-meta-item { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; color: var(--text-secondary); }
+.hero-meta-item .icon { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; background: var(--bg-glass); border: 1px solid var(--border-glass); border-radius: 10px; font-size: 1.1rem; }
+.hero-meta-item strong { color: var(--text-primary); font-weight: 600; }
+.hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ── FOOTER ── */
+.footer { background: var(--bg-primary); border-top: 1px solid var(--border-glass); padding: 48px 0 24px; }
+.footer-content { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; margin-bottom: 32px; }
+.footer-brand { max-width: 350px; }
+.footer-brand h3 { font-family: var(--font-heading); font-weight: 700; font-size: 1.2rem; margin-bottom: 8px; background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.footer-brand p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; }
+.footer-links { display: flex; gap: 48px; }
+.footer-links-col h4 { font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px; }
+.footer-links-col ul { list-style: none; }
+.footer-links-col li { margin-bottom: 8px; }
+.footer-links-col a { font-size: 0.85rem; color: var(--text-muted); transition: color var(--transition-fast); }
+.footer-links-col a:hover { color: var(--accent-primary); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid var(--border-glass); flex-wrap: wrap; gap: 12px; }
+.footer-bottom p { font-size: 0.8rem; color: var(--text-muted); }
+
+@media (max-width: 768px) {
+  .nav-links { position: fixed; top: 0; right: -100%; width: 80%; max-width: 320px; height: 100vh; background: rgba(6, 11, 24, 0.98); backdrop-filter: blur(30px); flex-direction: column; align-items: flex-start; padding: 80px 32px 32px; gap: 4px; transition: right var(--transition-base); border-left: 1px solid var(--border-glass); }
+  .nav-links.open { right: 0; }
+  .nav-links a { font-size: 1rem; padding: 12px 16px; width: 100%; }
+  .nav-toggle { display: flex; z-index: 1001; }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .hero-meta { gap: 16px; }
+  .palette-indicator { display: none; }
+}
+</style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">ICIQSI 2027</span>
+          <span class="nav-brand-sub">IEEE Conference</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tracks.html">Tracks</a></li>
+        <li><a href="dates.html">Dates</a></li>
+        <li><a href="registration.html">Registration</a></li>
+        <li><a href="submission.html">Submission</a></li>
+        <li><a href="committee.html">Committee</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="submission.html" class="nav-cta">Submit Paper</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PALETTE BADGE -->
+  <aside class="palette-indicator" aria-label="Current Color Palette">
+    <div class="palette-badge-title">🎨 <span>Palette 1: Cyber Neon</span></div>
+    <div class="palette-swatches">
+      <span class="palette-swatch" style="background:#060b18" title="Midnight Deep Navy"></span>
+      <span class="palette-swatch" style="background:#00e5ff" title="Electric Cyan"></span>
+      <span class="palette-swatch" style="background:#00b4d8" title="Sky Blue"></span>
+      <span class="palette-swatch" style="background:#7c3aed" title="Vivid Violet"></span>
+      <span class="palette-swatch" style="background:#a855f7" title="Purple"></span>
+    </div>
+    <div class="palette-hint">Switch pages in the menu to preview other 7 color themes!</div>
+  </aside>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <canvas id="particle-canvas"></canvas>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="hero-glow hero-glow-3"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="ieee-dot"></span>
+        IEEE Conference
+      </div>
+      <h1 class="hero-title">International Conference on</h1>
+      <span class="hero-acronym">ICIQSI 2027</span>
+      <p class="hero-full-name">Intelligent Computing, Quantum Technologies &amp; Sustainable Innovations</p>
+      <p class="hero-tagline">Shaping the Future of Intelligent Computing and Sustainability</p>
+
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <div class="icon">📅</div>
+          <div><strong>September 15–16, 2027</strong></div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="icon">📍</div>
+          <div><strong>NMKRV College, Bengaluru</strong></div>
+        </div>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="submission.html" class="btn btn-primary">📄 Submit Paper</a>
+        <a href="registration.html" class="btn btn-secondary">Register Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>ICIQSI 2027</h3>
+          <p>International Conference on Intelligent Computing, Quantum Technologies, and Sustainable Innovations. Organized by the Department of Computer Science &amp; Computer Applications, NMKRV College, Bengaluru.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-links-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="tracks.html">Tracks</a></li>
+              <li><a href="dates.html">Important Dates</a></li>
+              <li><a href="registration.html">Registration</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="submission.html">Submission Guidelines</a></li>
+              <li><a href="https://www.ieee.org/conferences/publishing/templates" target="_blank">IEEE Templates</a></li>
+              <li><a href="https://cmt3.research.microsoft.com" target="_blank">Microsoft CMT</a></li>
+              <li><a href="committee.html">Committee</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2027 ICIQSI — NMKRV College, Bengaluru. All rights reserved.</p>
+        <p>An IEEE Conference Initiative</p>
+      </div>
+    </div>
+  </footer>
+
+<script>
+/* Particle Canvas */
+(function() {
+  const canvas = document.getElementById('particle-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let width, height, particles;
+  function resize() { width = canvas.width = canvas.parentElement.offsetWidth; height = canvas.height = canvas.parentElement.offsetHeight; }
+  class Particle {
+    constructor() { this.reset(); }
+    reset() { this.x = Math.random()*width; this.y = Math.random()*height; this.size = Math.random()*2+0.5; this.speedX = (Math.random()-0.5)*0.4; this.speedY = (Math.random()-0.5)*0.4; this.opacity = Math.random()*0.5+0.1; this.hue = Math.random()>0.5?190:260; }
+    update() { this.x+=this.speedX; this.y+=this.speedY; if(this.x<0||this.x>width)this.speedX*=-1; if(this.y<0||this.y>height)this.speedY*=-1; }
+    draw() { ctx.beginPath(); ctx.arc(this.x,this.y,this.size,0,Math.PI*2); ctx.fillStyle=`hsla(${this.hue},80%,60%,${this.opacity})`; ctx.fill(); }
+  }
+  function init() { const count=Math.min(Math.floor((width*height)/8000),120); particles=[]; for(let i=0;i<count;i++) particles.push(new Particle()); }
+  function drawConnections() { for(let i=0;i<particles.length;i++) for(let j=i+1;j<particles.length;j++) { const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,dist=Math.sqrt(dx*dx+dy*dy); if(dist<120){const o=(1-dist/120)*0.15;ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.strokeStyle=`rgba(0,229,255,${o})`;ctx.lineWidth=0.5;ctx.stroke();} } }
+  function animate() { ctx.clearRect(0,0,width,height); particles.forEach(p=>{p.update();p.draw();}); drawConnections(); requestAnimationFrame(animate); }
+  resize(); init(); animate();
+  window.addEventListener('resize',()=>{resize();init();});
+})();
+
+/* Mobile Nav Toggle */
+(function() {
+  const toggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  if (toggle) {
+    toggle.addEventListener('click', () => { toggle.classList.toggle('open'); navLinks.classList.toggle('open'); });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { toggle.classList.remove('open'); navLinks.classList.remove('open'); }));
+  }
+})();
+</script>
+</body>
+</html>

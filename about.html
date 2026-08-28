@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — ICIQSI 2027 | NMKRV College, Bengaluru</title>
+  <meta name="description" content="Learn about ICIQSI 2027 — the IEEE International Conference on Intelligent Computing, Quantum Technologies, and Sustainable Innovations at NMKRV College, Bengaluru.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23041512' stroke='%2310b981' stroke-width='2'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-size='12' font-weight='bold' fill='%2334d399' font-family='sans-serif'%3EIC%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   PALETTE 2: "EMERALD & MINT QUANTUM" (Bio-Tech / Clean Green & Teal)
+   ============================================================ */
+:root {
+  --bg-primary: #031410;
+  --bg-secondary: #07221b;
+  --bg-card: rgba(8, 38, 30, 0.7);
+  --bg-glass: rgba(255, 255, 255, 0.04);
+  --bg-glass-hover: rgba(52, 211, 153, 0.1);
+  --accent-primary: #10b981;
+  --accent-secondary: #34d399;
+  --accent-tertiary: #059669;
+  --accent-highlight: #6ee7b7;
+  --accent-teal: #14b8a6;
+  --accent-lime: #a3e635;
+  --gradient-hero: linear-gradient(135deg, #02110d 0%, #062b22 45%, #043d32 100%);
+  --gradient-accent: linear-gradient(135deg, #10b981, #059669);
+  --gradient-accent-2: linear-gradient(135deg, #14b8a6, #a3e635);
+  --gradient-text: linear-gradient(135deg, #34d399 0%, #6ee7b7 50%, #a3e635 100%);
+  --gradient-glow: linear-gradient(135deg, rgba(16, 185, 129, 0.22), rgba(20, 184, 166, 0.22));
+  --text-primary: #f0fdf4;
+  --text-secondary: #a7f3d0;
+  --text-muted: #4b8b73;
+  --border-glass: rgba(52, 211, 153, 0.16);
+  --border-glow: rgba(52, 211, 153, 0.45);
+  --container-max: 1200px;
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 35px rgba(16, 185, 129, 0.25);
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden}
+body{font-family:var(--font-body);background:var(--bg-primary);color:var(--text-primary);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--accent-secondary);text-decoration:none;transition:color var(--transition-fast)}
+a:hover{color:var(--accent-lime)}
+::selection{background:var(--accent-tertiary);color:#fff}
+.container{max-width:var(--container-max);margin:0 auto;padding:0 24px}
+
+/* NAVBAR */
+.navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:16px 0;transition:all var(--transition-base);background:rgba(3,20,16,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border-glass)}
+.navbar .container{display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:12px;font-family:var(--font-heading);font-weight:700;font-size:1.3rem;color:var(--text-primary);text-decoration:none}
+.nav-brand-text{display:flex;flex-direction:column}
+.nav-brand-name{font-size:1.1rem;line-height:1.2;background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-brand-sub{font-size:0.65rem;font-weight:500;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:8px;list-style:none}
+.nav-links a{padding:8px 16px;font-size:0.85rem;font-weight:500;color:var(--text-secondary);border-radius:8px;transition:all var(--transition-fast);text-decoration:none}
+.nav-links a:hover,.nav-links a.active{color:var(--accent-secondary);background:rgba(52,211,153,0.12)}
+.nav-cta{padding:10px 24px !important;background:var(--gradient-accent) !important;color:#fff !important;border-radius:50px !important;font-weight:600 !important}
+.nav-cta:hover{box-shadow:0 4px 20px rgba(16,185,129,0.45);transform:translateY(-1px)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px}
+.nav-toggle span{width:24px;height:2px;background:var(--text-primary);border-radius:2px;transition:all var(--transition-base)}
+
+/* PAGE HEADER */
+.page-header{padding:140px 0 60px;background:var(--gradient-hero);position:relative;overflow:hidden;text-align:center}
+.page-header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to bottom,transparent,var(--bg-primary))}
+.page-header-glow{position:absolute;width:420px;height:420px;border-radius:50%;filter:blur(120px);opacity:0.25;z-index:0}
+.page-header-glow.g1{background:var(--accent-primary);top:-20%;right:10%}
+.page-header-glow.g2{background:var(--accent-teal);bottom:-30%;left:5%}
+.page-header h1{font-family:var(--font-heading);font-size:clamp(2.5rem,5vw,4rem);font-weight:900;position:relative;z-index:1;margin-bottom:16px}
+.page-header h1 span{background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.page-header p{font-size:1.1rem;color:var(--text-secondary);max-width:600px;margin:0 auto;position:relative;z-index:1}
+
+/* SECTION */
+.section{padding:80px 0;position:relative}
+.glass-card{background:var(--bg-card);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--border-glass);border-radius:var(--radius-lg);padding:32px;transition:transform var(--transition-base),border-color var(--transition-base),box-shadow var(--transition-base)}
+.glass-card:hover{transform:translateY(-4px);border-color:var(--border-glow);box-shadow:var(--shadow-glow)}
+
+/* REVEAL */
+.reveal-children>*{opacity:0;transform:translateY(30px);transition:opacity 0.6s cubic-bezier(0.16,1,0.3,1),transform 0.6s cubic-bezier(0.16,1,0.3,1)}
+.reveal-children.visible>*{opacity:1;transform:translateY(0)}
+.reveal-children.visible>*:nth-child(1){transition-delay:0.05s}.reveal-children.visible>*:nth-child(2){transition-delay:0.1s}.reveal-children.visible>*:nth-child(3){transition-delay:0.15s}.reveal-children.visible>*:nth-child(4){transition-delay:0.2s}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px}
+.about-card{padding:36px}
+.about-card-icon{width:52px;height:52px;display:flex;align-items:center;justify-content:center;background:var(--gradient-glow);border:1px solid var(--border-glow);border-radius:var(--radius-md);font-size:1.4rem;margin-bottom:18px}
+.about-card h3{font-family:var(--font-heading);font-size:1.3rem;font-weight:700;margin-bottom:14px;color:#fff}
+.about-card p{color:var(--text-secondary);line-height:1.8;font-size:0.93rem}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+.stat-item{text-align:center;padding:24px 14px}
+.stat-number{font-family:var(--font-heading);font-size:2.4rem;font-weight:800;background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:8px}
+.stat-label{font-size:0.82rem;color:var(--text-muted);font-weight:600;letter-spacing:0.5px}
+
+/* PALETTE BADGE */
+.palette-indicator{position:fixed;bottom:20px;right:20px;z-index:1000;background:rgba(3,20,16,0.94);border:1px solid var(--accent-primary);border-radius:16px;padding:12px 18px;box-shadow:0 8px 30px rgba(0,0,0,0.5),0 0 20px rgba(16,185,129,0.25);backdrop-filter:blur(16px);max-width:320px;font-size:0.78rem}
+.palette-badge-title{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--text-primary);margin-bottom:6px}
+.palette-swatches{display:flex;gap:6px;margin:6px 0 8px}
+.palette-swatch{width:18px;height:18px;border-radius:50%;border:1px solid rgba(255,255,255,0.3)}
+.palette-hint{color:var(--text-muted);font-size:0.7rem}
+
+/* FOOTER */
+.footer{background:var(--bg-primary);border-top:1px solid var(--border-glass);padding:48px 0 24px}
+.footer-content{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;margin-bottom:32px}
+.footer-brand{max-width:350px}
+.footer-brand h3{font-family:var(--font-heading);font-weight:700;font-size:1.2rem;margin-bottom:8px;background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.footer-brand p{font-size:0.85rem;color:var(--text-muted);line-height:1.7}
+.footer-links{display:flex;gap:48px}
+.footer-links-col h4{font-family:var(--font-heading);font-size:0.85rem;font-weight:700;color:var(--text-primary);margin-bottom:16px}
+.footer-links-col ul{list-style:none}
+.footer-links-col li{margin-bottom:8px}
+.footer-links-col a{font-size:0.85rem;color:var(--text-muted);transition:color var(--transition-fast)}
+.footer-links-col a:hover{color:var(--accent-secondary)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--border-glass);flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:0.8rem;color:var(--text-muted)}
+
+@media(max-width:1024px){.about-grid{grid-template-columns:1fr}.stats-bar{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){
+  .nav-links{position:fixed;top:0;right:-100%;width:80%;max-width:320px;height:100vh;background:rgba(3,20,16,0.98);backdrop-filter:blur(30px);flex-direction:column;align-items:flex-start;padding:80px 32px 32px;gap:4px;transition:right var(--transition-base);border-left:1px solid var(--border-glass)}
+  .nav-links.open{right:0}
+  .nav-links a{font-size:1rem;padding:12px 16px;width:100%}
+  .nav-toggle{display:flex;z-index:1001}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle.open span:nth-child(2){opacity:0}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .stats-bar{grid-template-columns:1fr 1fr;gap:12px}
+  .palette-indicator{display:none}
+}
+</style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand"><div class="nav-brand-text"><span class="nav-brand-name">ICIQSI 2027</span><span class="nav-brand-sub">IEEE Conference</span></div></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="tracks.html">Tracks</a></li>
+        <li><a href="dates.html">Dates</a></li>
+        <li><a href="registration.html">Registration</a></li>
+        <li><a href="submission.html">Submission</a></li>
+        <li><a href="committee.html">Committee</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="submission.html" class="nav-cta">Submit Paper</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- PALETTE BADGE -->
+  <aside class="palette-indicator" aria-label="Current Color Palette">
+    <div class="palette-badge-title">🌿 <span>Palette 2: Emerald &amp; Mint</span></div>
+    <div class="palette-swatches">
+      <span class="palette-swatch" style="background:#031410" title="Dark Obsidian Green"></span>
+      <span class="palette-swatch" style="background:#10b981" title="Emerald Green"></span>
+      <span class="palette-swatch" style="background:#34d399" title="Mint Glow"></span>
+      <span class="palette-swatch" style="background:#14b8a6" title="Teal Accent"></span>
+      <span class="palette-swatch" style="background:#a3e635" title="Electric Lime"></span>
+    </div>
+    <div class="palette-hint">Clean, sustainable tech aesthetic. Click other pages to view more!</div>
+  </aside>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="page-header-glow g1"></div>
+    <div class="page-header-glow g2"></div>
+    <div class="container">
+      <h1>About the <span>Conference</span></h1>
+      <p>Bridging Research &amp; Real-World Innovation through a multidisciplinary platform.</p>
+    </div>
+  </header>
+
+  <!-- ABOUT CONTENT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid reveal-children">
+        <div class="glass-card about-card">
+          <div class="about-card-icon">🔬</div>
+          <h3>Conference Theme</h3>
+          <p>Intelligent Computing, Quantum Technologies, and Sustainable Innovations highlights the role of emerging technologies in creating a smarter, more sustainable future. It brings together diverse disciplines — Artificial Intelligence, Machine Learning, Quantum Computing, and intelligent systems — to bridge the gap between research and real-world applications. The theme also emphasizes sustainable technologies, including green computing, energy-efficient data centers, renewable energy, and environmentally responsible digital transformation.</p>
+        </div>
+        <div class="glass-card about-card">
+          <div class="about-card-icon">🏛️</div>
+          <h3>About NMKRV College</h3>
+          <p>NMKRV College, Bengaluru, is one of Karnataka's premier institutions of higher education, established in 1973 under the aegis of the Rashtreeya Sikshana Samithi Trust (RSST). Affiliated with Bengaluru University and accredited by NAAC, the college is committed to academic excellence, innovation, and holistic development. The Department of Computer Science and Computer Applications is at the forefront of research and technology education.</p>
+        </div>
+      </div>
+
+      <div class="stats-bar reveal-children">
+        <div class="glass-card stat-item">
+          <div class="stat-number" data-target="3" data-suffix="">0</div>
+          <div class="stat-label">Research Tracks</div>
+        </div>
+        <div class="glass-card stat-item">
+          <div class="stat-number" data-target="2" data-suffix="">0</div>
+          <div class="stat-label">Conference Days</div>
+        </div>
+        <div class="glass-card stat-item">
+          <div class="stat-number" data-target="30" data-suffix="+">0</div>
+          <div class="stat-label">Key Topics</div>
+        </div>
+        <div class="glass-card stat-item">
+          <div class="stat-number" data-target="50" data-suffix="" data-prefix="Est. ">0</div>
+          <div class="stat-label">Years of NMKRV</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand"><h3>ICIQSI 2027</h3><p>International Conference on Intelligent Computing, Quantum Technologies, and Sustainable Innovations. Organized by the Department of Computer Science &amp; Computer Applications, NMKRV College, Bengaluru.</p></div>
+        <div class="footer-links">
+          <div class="footer-links-col"><h4>Quick Links</h4><ul><li><a href="about.html">About</a></li><li><a href="tracks.html">Tracks</a></li><li><a href="dates.html">Important Dates</a></li><li><a href="registration.html">Registration</a></li></ul></div>
+          <div class="footer-links-col"><h4>Resources</h4><ul><li><a href="submission.html">Submission Guidelines</a></li><li><a href="https://www.ieee.org/conferences/publishing/templates" target="_blank">IEEE Templates</a></li><li><a href="https://cmt3.research.microsoft.com" target="_blank">Microsoft CMT</a></li><li><a href="committee.html">Committee</a></li></ul></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2027 ICIQSI — NMKRV College, Bengaluru. All rights reserved.</p><p>An IEEE Conference Initiative</p></div>
+    </div>
+  </footer>
+
+<script>
+(function(){const t=document.getElementById('nav-toggle'),n=document.getElementById('nav-links');if(t){t.addEventListener('click',()=>{t.classList.toggle('open');n.classList.toggle('open')});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{t.classList.remove('open');n.classList.remove('open')}))}})();
+(function(){const r=document.querySelectorAll('.reveal,.reveal-children');if(!r.length)return;const o=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -60px 0px'});r.forEach(el=>o.observe(el))})();
+(function(){const c=document.querySelectorAll('.stat-number');if(!c.length)return;const o=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting&&!en.target.dataset.counted){en.target.dataset.counted='true';const t=parseInt(en.target.dataset.target)||0,s=en.target.dataset.suffix||'',p=en.target.dataset.prefix||'',step=t/(2000/16);let cur=0;(function u(){cur+=step;if(cur>=t){en.target.textContent=p+t+s}else{en.target.textContent=p+Math.floor(cur)+s;requestAnimationFrame(u)}})()}})},{threshold:0.5});c.forEach(el=>o.observe(el))})();
+</script>
+</body>
+</html>
