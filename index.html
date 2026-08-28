@@ -221,7 +221,7 @@ a:hover { color: var(--accent-highlight); }
 .hero-full-name { font-family: var(--font-heading); font-size: clamp(0.95rem, 2vw, 1.3rem); font-weight: 500; color: var(--text-secondary); letter-spacing: 1px; margin-bottom: 12px; }
 .hero-tagline { font-size: clamp(0.95rem, 1.8vw, 1.15rem); font-weight: 400; color: var(--text-secondary); margin-bottom: 28px; }
 
-/* ── THEME ELEMENTS (FLOATING PILL BADGES & ORBITALS) ── */
+/* ── THEME ELEMENTS (FLOATING PILL BADGES & TECH CHIPS) ── */
 .theme-elements-container {
   display: flex;
   flex-direction: column;
@@ -259,11 +259,8 @@ a:hover { color: var(--accent-highlight); }
   box-shadow: 0 8px 25px rgba(0, 229, 255, 0.3);
 }
 .theme-pill-badge.pill-ai { border-color: rgba(0, 229, 255, 0.35); }
-.theme-pill-badge.pill-ai:hover { box-shadow: 0 8px 25px rgba(0, 229, 255, 0.35); }
 .theme-pill-badge.pill-quantum { border-color: rgba(168, 85, 247, 0.4); }
-.theme-pill-badge.pill-quantum:hover { box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4); }
 .theme-pill-badge.pill-sustainability { border-color: rgba(16, 185, 129, 0.4); }
-.theme-pill-badge.pill-sustainability:hover { box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4); }
 
 .theme-pill-icon {
   font-size: 1.25rem;
@@ -305,55 +302,75 @@ a:hover { color: var(--accent-highlight); }
   color: var(--accent-primary);
 }
 
-/* THEME QUANTUM/AI FLOATING ORBITAL GRAPHIC */
-.quantum-orbital-system {
+/* ── MOVING BACKGROUND ELEMENTS (QUANTUM ATOMS, GLYPHS, NEURAL NODES) ── */
+.bg-floating-elements {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 580px;
-  height: 580px;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.45;
-}
-.orbital-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px dashed rgba(0, 229, 255, 0.22);
-}
-.orbital-ring-1 {
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  top: 0; left: 0;
-  animation: spinOrbit 35s linear infinite;
-  border-color: rgba(0, 229, 255, 0.25);
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
 }
-.orbital-ring-2 {
-  width: 76%;
-  height: 76%;
-  top: 12%; left: 12%;
-  animation: spinOrbitReverse 25s linear infinite;
-  border-color: rgba(168, 85, 247, 0.25);
-}
-.orbital-ring-3 {
-  width: 52%;
-  height: 52%;
-  top: 24%; left: 24%;
-  animation: spinOrbit 18s linear infinite;
-  border-color: rgba(16, 185, 129, 0.2);
-}
-.orbital-node {
+.bg-atom-orbit {
   position: absolute;
-  width: 8px;
-  height: 8px;
   border-radius: 50%;
-  background: var(--accent-primary);
-  box-shadow: 0 0 12px var(--accent-primary);
+  border: 1px dashed rgba(0, 229, 255, 0.18);
 }
-.orbital-node-1 { top: -4px; left: 50%; background: #00e5ff; box-shadow: 0 0 12px #00e5ff; }
-.orbital-node-2 { bottom: -4px; right: 30%; background: #a855f7; box-shadow: 0 0 12px #a855f7; }
-.orbital-node-3 { top: 50%; right: -4px; background: #10b981; box-shadow: 0 0 12px #10b981; }
+.bg-atom-1 {
+  width: 420px; height: 420px;
+  top: -80px; left: -80px;
+  animation: floatDrift1 24s ease-in-out infinite alternate, spinOrbit 40s linear infinite;
+}
+.bg-atom-2 {
+  width: 500px; height: 500px;
+  bottom: -120px; right: -100px;
+  border-color: rgba(168, 85, 247, 0.16);
+  animation: floatDrift2 28s ease-in-out infinite alternate, spinOrbitReverse 35s linear infinite;
+}
+.bg-atom-3 {
+  width: 280px; height: 280px;
+  top: 20%; right: 12%;
+  border-color: rgba(16, 185, 129, 0.15);
+  animation: floatDrift3 20s ease-in-out infinite alternate, spinOrbit 25s linear infinite;
+}
+
+.bg-glyph {
+  position: absolute;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  opacity: 0.22;
+  user-select: none;
+  filter: blur(0.3px);
+  text-shadow: 0 0 15px currentColor;
+  animation: floatGlyph 16s ease-in-out infinite alternate;
+}
+.bg-glyph.g1 { top: 18%; left: 12%; font-size: 2.2rem; color: #00e5ff; animation-duration: 14s; animation-delay: 0s; }
+.bg-glyph.g2 { top: 65%; left: 8%; font-size: 2.6rem; color: #a855f7; animation-duration: 18s; animation-delay: -3s; }
+.bg-glyph.g3 { top: 25%; right: 14%; font-size: 2rem; color: #10b981; animation-duration: 16s; animation-delay: -5s; }
+.bg-glyph.g4 { top: 72%; right: 18%; font-size: 2.4rem; color: #38bdf8; animation-duration: 20s; animation-delay: -8s; }
+.bg-glyph.g5 { top: 45%; left: 3%; font-size: 1.8rem; color: #7c3aed; animation-duration: 15s; animation-delay: -2s; }
+.bg-glyph.g6 { top: 82%; left: 45%; font-size: 1.9rem; color: #ec4899; animation-duration: 22s; animation-delay: -6s; }
+.bg-glyph.g7 { top: 12%; left: 60%; font-size: 2rem; color: #00e5ff; animation-duration: 17s; animation-delay: -4s; }
+
+@keyframes floatGlyph {
+  0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 0.15; }
+  50% { transform: translateY(-30px) rotate(8deg) scale(1.15); opacity: 0.35; }
+  100% { transform: translateY(20px) rotate(-8deg) scale(0.95); opacity: 0.2; }
+}
+@keyframes floatDrift1 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(60px, 40px); }
+}
+@keyframes floatDrift2 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-50px, -40px); }
+}
+@keyframes floatDrift3 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(30px, -35px); }
+}
 @keyframes spinOrbit {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -608,11 +625,18 @@ a:hover { color: var(--accent-highlight); }
         <div class="hero-glow hero-glow-2"></div>
         <div class="hero-glow hero-glow-3"></div>
 
-        <!-- ANIMATED QUANTUM ORBITAL GRAPHIC -->
-        <div class="quantum-orbital-system">
-          <div class="orbital-ring orbital-ring-1"><div class="orbital-node orbital-node-1"></div></div>
-          <div class="orbital-ring orbital-ring-2"><div class="orbital-node orbital-node-2"></div></div>
-          <div class="orbital-ring orbital-ring-3"><div class="orbital-node orbital-node-3"></div></div>
+        <!-- MOVING BACKGROUND ELEMENTS (FLOATING ATOMS & THEME GLYPHS) -->
+        <div class="bg-floating-elements">
+          <div class="bg-atom-orbit bg-atom-1"></div>
+          <div class="bg-atom-orbit bg-atom-2"></div>
+          <div class="bg-atom-orbit bg-atom-3"></div>
+          <span class="bg-glyph g1">|ψ⟩</span>
+          <span class="bg-glyph g2">0101</span>
+          <span class="bg-glyph g3">⚛</span>
+          <span class="bg-glyph g4">|0⟩</span>
+          <span class="bg-glyph g5">∑</span>
+          <span class="bg-glyph g6">🌿</span>
+          <span class="bg-glyph g7">🧠</span>
         </div>
 
         <div class="hero-content">
@@ -1260,27 +1284,41 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 })();
 
-/* Particle Canvas */
+/* Particle Canvas with Interactive Mouse Quantum Connections */
 (function() {
   const canvas = document.getElementById('particle-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
   let width, height, particles;
+  const mouse = { x: null, y: null, radius: 140 };
+
   function resize() {
     if (!canvas.parentElement) return;
     width = canvas.width = canvas.parentElement.offsetWidth;
     height = canvas.height = canvas.parentElement.offsetHeight;
   }
+
+  window.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+  window.addEventListener('mouseleave', () => {
+    mouse.x = null;
+    mouse.y = null;
+  });
+
   class Particle {
     constructor() { this.reset(); }
     reset() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.size = Math.random() * 2 + 0.5;
-      this.speedX = (Math.random() - 0.5) * 0.4;
-      this.speedY = (Math.random() - 0.5) * 0.4;
-      this.opacity = Math.random() * 0.5 + 0.1;
-      this.hue = Math.random() > 0.5 ? 190 : 260;
+      this.size = Math.random() * 2.2 + 0.8;
+      this.speedX = (Math.random() - 0.5) * 0.5;
+      this.speedY = (Math.random() - 0.5) * 0.5;
+      this.opacity = Math.random() * 0.6 + 0.2;
+      const hues = [190, 265, 160]; // Cyan, Purple, Green
+      this.hue = hues[Math.floor(Math.random() * hues.length)];
     }
     update() {
       this.x += this.speedX;
@@ -1291,39 +1329,60 @@ window.addEventListener('DOMContentLoaded', () => {
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = `hsla(${this.hue},80%,60%,${this.opacity})`;
+      ctx.fillStyle = `hsla(${this.hue}, 85%, 65%, ${this.opacity})`;
       ctx.fill();
     }
   }
+
   function init() {
-    const count = Math.min(Math.floor((width * height) / 8000), 120);
+    const count = Math.min(Math.floor((width * height) / 7500), 130);
     particles = [];
     for (let i = 0; i < count; i++) particles.push(new Particle());
   }
+
   function drawConnections() {
+    // Particle to Particle links
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x,
               dy = particles[i].y - particles[j].y,
               dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 120) {
-          const o = (1 - dist / 120) * 0.15;
+        if (dist < 115) {
+          const o = (1 - dist / 115) * 0.16;
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(0,229,255,${o})`;
-          ctx.lineWidth = 0.5;
+          ctx.strokeStyle = `rgba(0, 229, 255, ${o})`;
+          ctx.lineWidth = 0.6;
+          ctx.stroke();
+        }
+      }
+
+      // Particle to Mouse interaction
+      if (mouse.x !== null && mouse.y !== null) {
+        const mdx = particles[i].x - mouse.x,
+              mdy = particles[i].y - mouse.y,
+              mDist = Math.sqrt(mdx * mdx + mdy * mdy);
+        if (mDist < mouse.radius) {
+          const mo = (1 - mDist / mouse.radius) * 0.35;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.strokeStyle = `rgba(168, 85, 247, ${mo})`;
+          ctx.lineWidth = 0.8;
           ctx.stroke();
         }
       }
     }
   }
+
   function animate() {
     ctx.clearRect(0, 0, width, height);
     particles.forEach(p => { p.update(); p.draw(); });
     drawConnections();
     requestAnimationFrame(animate);
   }
+
   resize(); init(); animate();
   window.addEventListener('resize', () => { resize(); init(); });
 })();
