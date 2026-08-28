@@ -194,74 +194,65 @@ a:hover { color: var(--accent-highlight); }
 }
 
 /* ============================================================
-   PAGE 1: HOME (CLEAN, PRESTIGIOUS ACADEMIC REDESIGN)
+   PAGE 1: HOME (STATIC GRADIENT IMAGE BANNER & NEW LOOK)
    ============================================================ */
 .home-container {
   display: flex;
   flex-direction: column;
-  gap: 70px;
+  gap: 60px;
   padding-bottom: 70px;
 }
 
-/* 1. Grand Hero Section */
-.hero-clean {
-  min-height: 80vh;
+/* 1. Static Gradient Image Hero Banner */
+.hero-banner {
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 80px 24px 70px;
-  background: radial-gradient(circle at 50% 20%, rgba(13, 27, 62, 0.7) 0%, rgba(6, 11, 24, 0.95) 70%, #060b18 100%);
-  border-bottom: 1px solid var(--border-glass);
+  padding: 110px 24px 90px;
   text-align: center;
+  background-image: 
+    linear-gradient(180deg, rgba(6, 11, 24, 0.45) 0%, rgba(6, 11, 24, 0.78) 55%, #060b18 100%),
+    radial-gradient(ellipse at 50% 35%, rgba(0, 229, 255, 0.15) 0%, transparent 65%),
+    url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=80');
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid var(--border-glass);
 }
-#particle-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
-.hero-glow-blob { position: absolute; border-radius: 50%; filter: blur(140px); opacity: 0.3; pointer-events: none; }
-.hero-glow-cyan { width: 500px; height: 500px; background: var(--accent-primary); top: -15%; right: -5%; }
-.hero-glow-purple { width: 550px; height: 550px; background: var(--accent-tertiary); bottom: -10%; left: -5%; }
 
 .hero-inner {
   position: relative;
   z-index: 2;
-  max-width: 1040px;
+  max-width: 1060px;
   margin: 0 auto;
 }
 .hero-org-title {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--accent-primary);
   margin-bottom: 14px;
 }
 .hero-ieee-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(0, 229, 255, 0.08);
-  border: 1px solid rgba(0, 229, 255, 0.35);
-  color: var(--accent-primary);
-  padding: 7px 20px;
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  color: #fff;
+  padding: 8px 24px;
   border-radius: 50px;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  margin-bottom: 22px;
-}
-.hero-ieee-badge .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent-primary);
-  box-shadow: 0 0 10px var(--accent-primary);
-  animation: pulse-dot 2s infinite;
-}
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.3; transform: scale(1.5); }
+  margin-bottom: 24px;
+  backdrop-filter: blur(10px);
 }
 
 .hero-main-title {
@@ -273,7 +264,7 @@ a:hover { color: var(--accent-highlight); }
 }
 .hero-main-acronym {
   font-family: var(--font-heading);
-  font-size: clamp(3.6rem, 9vw, 6.8rem);
+  font-size: clamp(3.8rem, 9.5vw, 7.2rem);
   font-weight: 900;
   background: var(--gradient-text);
   -webkit-background-clip: text;
@@ -282,22 +273,22 @@ a:hover { color: var(--accent-highlight); }
   letter-spacing: -2px;
   line-height: 1.05;
   margin-bottom: 12px;
-  filter: drop-shadow(0 0 40px rgba(0, 229, 255, 0.25));
+  filter: drop-shadow(0 0 45px rgba(0, 229, 255, 0.35));
 }
 .hero-main-theme {
   font-family: var(--font-heading);
-  font-size: clamp(1.1rem, 2.2vw, 1.55rem);
+  font-size: clamp(1.15rem, 2.3vw, 1.6rem);
   font-weight: 600;
   color: #fff;
   line-height: 1.4;
-  max-width: 860px;
+  max-width: 880px;
   margin: 0 auto 14px;
 }
 .hero-main-desc {
-  font-size: clamp(0.92rem, 1.6vw, 1.08rem);
+  font-size: clamp(0.94rem, 1.6vw, 1.12rem);
   color: var(--text-secondary);
-  max-width: 720px;
-  margin: 0 auto 28px;
+  max-width: 740px;
+  margin: 0 auto 30px;
   line-height: 1.7;
 }
 
@@ -306,24 +297,25 @@ a:hover { color: var(--accent-highlight); }
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 34px;
+  margin-bottom: 36px;
 }
 .hero-info-pill {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  padding: 10px 20px;
-  background: rgba(15, 25, 52, 0.65);
-  border: 1px solid var(--border-glass);
+  gap: 10px;
+  padding: 12px 24px;
+  background: rgba(8, 16, 36, 0.75);
+  border: 1px solid rgba(0, 229, 255, 0.25);
   border-radius: 50px;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--text-secondary);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 .hero-info-pill strong { color: #fff; font-weight: 600; }
-.hero-info-pill .pill-icon { font-size: 1.05rem; }
+.hero-info-pill .pill-icon { font-size: 1.1rem; }
 
 /* Hero CTA Buttons */
 .hero-cta-group {
@@ -769,17 +761,12 @@ a:hover { color: var(--accent-highlight); }
     <section class="page-view active" id="page-home">
       <div class="home-container">
 
-        <!-- 1. GRAND HERO SECTION -->
-        <div class="hero-clean">
-          <canvas id="particle-canvas"></canvas>
-          <div class="hero-glow-blob hero-glow-cyan"></div>
-          <div class="hero-glow-blob hero-glow-purple"></div>
-
+        <!-- 1. STATIC GRADIENT IMAGE HERO BANNER -->
+        <div class="hero-banner">
           <div class="hero-inner">
             <div class="hero-org-title">Rashtreeya Sikshana Samithi Trust (RSST) • NMKRV College for Women (Autonomous)</div>
             <div class="hero-ieee-badge">
-              <span class="dot"></span>
-              IEEE International Conference Initiative
+              ✦ IEEE International Conference Initiative ✦
             </div>
             
             <h1 class="hero-main-title">International Conference on</h1>
