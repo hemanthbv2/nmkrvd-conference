@@ -194,7 +194,7 @@ a:hover { color: var(--accent-highlight); }
 }
 
 /* ============================================================
-   PAGE 1: HOME (HERO + THEME ELEMENTS)
+   PAGE 1: HOME (TECH IMAGE BACKDROP + MOTION GRAPHICS)
    ============================================================ */
 .hero-view {
   min-height: calc(100vh - 75px);
@@ -202,24 +202,128 @@ a:hover { color: var(--accent-highlight); }
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: var(--gradient-hero);
+  background: var(--bg-primary);
   position: relative;
   overflow: hidden;
   padding: 60px 0 50px;
 }
-#particle-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
-.hero-glow { position: absolute; border-radius: 50%; filter: blur(110px); opacity: 0.35; z-index: 0; }
+
+/* 1. Technology Hero Background Image Layer */
+.hero-bg-image {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=2000&q=80') center center / cover no-repeat;
+  opacity: 0.35;
+  filter: saturate(1.4) brightness(0.85);
+  mix-blend-mode: screen;
+  z-index: 0;
+  animation: techBgMotion 25s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+.hero-bg-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(circle at center, rgba(6, 11, 24, 0.45) 0%, rgba(6, 11, 24, 0.92) 80%, #060b18 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 2. Cyber Laser Scanning Beam (Motion Graphic) */
+.hero-scanline {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 6px;
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 229, 255, 0.8) 50%, transparent 100%);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.9), 0 0 40px rgba(168, 85, 247, 0.6);
+  opacity: 0.7;
+  z-index: 1;
+  pointer-events: none;
+  animation: scanlineSweep 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* 3. Holographic Tech HUD Orbital Radar (Motion Graphic) */
+.hero-hud-orbit {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 680px; height: 680px;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 229, 255, 0.22);
+  pointer-events: none;
+  z-index: 1;
+  animation: hudRotate 40s linear infinite;
+}
+.hero-hud-orbit::before {
+  content: '';
+  position: absolute;
+  top: 10%; left: 10%; width: 80%; height: 80%;
+  border-radius: 50%;
+  border: 1px solid rgba(168, 85, 247, 0.18);
+  border-left-color: rgba(0, 229, 255, 0.6);
+  border-right-color: rgba(16, 185, 129, 0.6);
+  animation: hudRotateReverse 24s linear infinite;
+}
+.hero-hud-orbit::after {
+  content: '';
+  position: absolute;
+  top: 25%; left: 25%; width: 50%; height: 50%;
+  border-radius: 50%;
+  border: 1px dashed rgba(168, 85, 247, 0.25);
+  animation: hudRotate 16s linear infinite;
+}
+
+#particle-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
+.hero-glow { position: absolute; border-radius: 50%; filter: blur(110px); opacity: 0.35; z-index: 1; }
 .hero-glow-1 { width: 520px; height: 520px; background: var(--accent-tertiary); top: -10%; right: -5%; }
 .hero-glow-2 { width: 440px; height: 440px; background: var(--accent-secondary); bottom: -5%; left: -5%; }
 .hero-glow-3 { width: 320px; height: 320px; background: var(--accent-primary); top: 40%; left: 30%; opacity: 0.18; }
-.hero-content { position: relative; z-index: 2; text-align: center; max-width: 980px; padding: 0 24px; }
-.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 229, 255, 0.12); border: 1px solid rgba(0, 229, 255, 0.4); color: var(--accent-primary); padding: 8px 20px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; }
+
+/* 4. Glass Framed Hero Content on Top */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 960px;
+  padding: 40px 32px;
+  background: rgba(10, 18, 38, 0.62);
+  border: 1px solid rgba(0, 229, 255, 0.28);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55), 0 0 40px rgba(0, 229, 255, 0.12);
+  animation: heroCardFloat 8s ease-in-out infinite alternate;
+}
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 229, 255, 0.12); border: 1px solid rgba(0, 229, 255, 0.4); color: var(--accent-primary); padding: 8px 20px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
 .hero-badge .ieee-dot { width: 8px; height: 8px; background: var(--accent-primary); border-radius: 50%; animation: pulse-dot 2s ease-in-out infinite; }
 @keyframes pulse-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.6); } }
-.hero-title { font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.1; margin-bottom: 8px; }
-.hero-acronym { font-family: var(--font-heading); font-size: clamp(3rem, 7.5vw, 6.2rem); font-weight: 900; background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -2px; display: block; margin-bottom: 6px; }
-.hero-full-name { font-family: var(--font-heading); font-size: clamp(0.95rem, 2vw, 1.3rem); font-weight: 500; color: var(--text-secondary); letter-spacing: 1px; margin-bottom: 12px; }
-.hero-tagline { font-size: clamp(0.95rem, 1.8vw, 1.15rem); font-weight: 400; color: var(--text-secondary); margin-bottom: 28px; }
+.hero-title { font-family: var(--font-heading); font-size: clamp(1.8rem, 4.5vw, 3.4rem); font-weight: 900; line-height: 1.15; margin-bottom: 6px; }
+.hero-acronym { font-family: var(--font-heading); font-size: clamp(2.8rem, 7vw, 5.6rem); font-weight: 900; background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -2px; display: block; margin-bottom: 6px; }
+.hero-full-name { font-family: var(--font-heading); font-size: clamp(0.92rem, 1.8vw, 1.25rem); font-weight: 500; color: var(--text-secondary); letter-spacing: 0.8px; margin-bottom: 10px; }
+.hero-tagline { font-size: clamp(0.9rem, 1.6vw, 1.08rem); font-weight: 400; color: var(--text-secondary); margin-bottom: 24px; }
+
+/* MOTION GRAPHICS KEYFRAMES */
+@keyframes techBgMotion {
+  0% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.06) translate(-10px, -8px); }
+  100% { transform: scale(1.02) translate(8px, 6px); }
+}
+@keyframes scanlineSweep {
+  0% { top: -5%; opacity: 0; }
+  10% { opacity: 0.85; }
+  90% { opacity: 0.85; }
+  100% { top: 105%; opacity: 0; }
+}
+@keyframes hudRotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes hudRotateReverse {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+@keyframes heroCardFloat {
+  0% { transform: translateY(0); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55), 0 0 35px rgba(0, 229, 255, 0.12); }
+  100% { transform: translateY(-8px); box-shadow: 0 28px 75px rgba(0, 0, 0, 0.65), 0 0 55px rgba(0, 229, 255, 0.22); }
+}
 
 /* ── ADVANCED TECH-ORIENTED MOVING BACKGROUND GRAPHICS ── */
 .bg-graphic-elements {
@@ -738,6 +842,16 @@ a:hover { color: var(--accent-highlight); }
          ──────────────────────────────────────────── -->
     <section class="page-view active" id="page-home">
       <div class="hero-view">
+        <!-- 1. TECHNOLOGY BACKGROUND IMAGE LAYER -->
+        <div class="hero-bg-image"></div>
+        <div class="hero-bg-overlay"></div>
+
+        <!-- 2. CYBER SCANLINE LASER BEAM (MOTION GRAPHIC) -->
+        <div class="hero-scanline"></div>
+
+        <!-- 3. HOLOGRAPHIC TECH HUD ORBIT (MOTION GRAPHIC) -->
+        <div class="hero-hud-orbit"></div>
+
         <canvas id="particle-canvas"></canvas>
         <div class="hero-glow hero-glow-1"></div>
         <div class="hero-glow hero-glow-2"></div>
