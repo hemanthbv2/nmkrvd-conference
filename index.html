@@ -194,25 +194,17 @@ a:hover { color: var(--accent-highlight); }
 }
 
 /* ============================================================
-   PAGE 1: HOME (STATIC GRADIENT IMAGE BANNER & NEW LOOK)
+   PAGE 1: HOME (EXCLUSIVE FULL-SCREEN HERO BANNER)
    ============================================================ */
-.home-container {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-  padding-bottom: 70px;
-}
-
-/* 1. Static Gradient Image Hero Banner */
 .hero-banner {
-  min-height: 85vh;
+  min-height: calc(100vh - 75px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 110px 24px 90px;
+  padding: 60px 24px;
   text-align: center;
   background-image: 
     linear-gradient(180deg, rgba(6, 11, 24, 0.45) 0%, rgba(6, 11, 24, 0.78) 55%, #060b18 100%),
@@ -221,7 +213,6 @@ a:hover { color: var(--accent-highlight); }
   background-size: cover;
   background-position: center 30%;
   background-repeat: no-repeat;
-  border-bottom: 1px solid var(--border-glass);
 }
 
 .hero-inner {
@@ -759,201 +750,41 @@ a:hover { color: var(--accent-highlight); }
          PAGE 1: HOME (WITH THEME ELEMENTS)
          ──────────────────────────────────────────── -->
     <section class="page-view active" id="page-home">
-      <div class="home-container">
+      <!-- 1. FULL-SCREEN STATIC GRADIENT IMAGE HERO BANNER -->
+      <div class="hero-banner">
+        <div class="hero-inner">
+          <div class="hero-org-title">Rashtreeya Sikshana Samithi Trust (RSST) • NMKRV College for Women (Autonomous)</div>
+          <div class="hero-ieee-badge">
+            ✦ IEEE International Conference Initiative ✦
+          </div>
+          
+          <h1 class="hero-main-title">International Conference on</h1>
+          <div class="hero-main-acronym">ICIQSI 2027</div>
+          <h2 class="hero-main-theme">Intelligent Computing, Quantum Technologies &amp; Sustainable Innovations</h2>
+          <p class="hero-main-desc">A premier multidisciplinary international forum connecting researchers, engineers, and scientists to advance artificial intelligence, quantum frontiers, and green sustainable computing.</p>
 
-        <!-- 1. STATIC GRADIENT IMAGE HERO BANNER -->
-        <div class="hero-banner">
-          <div class="hero-inner">
-            <div class="hero-org-title">Rashtreeya Sikshana Samithi Trust (RSST) • NMKRV College for Women (Autonomous)</div>
-            <div class="hero-ieee-badge">
-              ✦ IEEE International Conference Initiative ✦
+          <!-- Info Badges Strip -->
+          <div class="hero-info-strip">
+            <div class="hero-info-pill">
+              <span class="pill-icon">📅</span>
+              <span><strong>September 15–16, 2027</strong></span>
             </div>
-            
-            <h1 class="hero-main-title">International Conference on</h1>
-            <div class="hero-main-acronym">ICIQSI 2027</div>
-            <h2 class="hero-main-theme">Intelligent Computing, Quantum Technologies &amp; Sustainable Innovations</h2>
-            <p class="hero-main-desc">A premier multidisciplinary international forum connecting researchers, engineers, and scientists to advance artificial intelligence, quantum frontiers, and green sustainable computing.</p>
+            <div class="hero-info-pill">
+              <span class="pill-icon">📍</span>
+              <span><strong>NMKRV College, Bengaluru, India</strong></span>
+            </div>
+            <div class="hero-info-pill">
+              <span class="pill-icon">🌐</span>
+              <span><strong>Hybrid Mode (In-Person &amp; Virtual)</strong></span>
+            </div>
+          </div>
 
-            <!-- Info Badges Strip -->
-            <div class="hero-info-strip">
-              <div class="hero-info-pill">
-                <span class="pill-icon">📅</span>
-                <span><strong>September 15–16, 2027</strong></span>
-              </div>
-              <div class="hero-info-pill">
-                <span class="pill-icon">📍</span>
-                <span><strong>NMKRV College, Bengaluru, India</strong></span>
-              </div>
-              <div class="hero-info-pill">
-                <span class="pill-icon">🌐</span>
-                <span><strong>Hybrid Mode (In-Person &amp; Virtual)</strong></span>
-              </div>
-            </div>
-
-            <!-- CTA Buttons -->
-            <div class="hero-cta-group">
-              <button onclick="navigateTo('submission')" class="btn btn-primary">📄 Submit Paper (Microsoft CMT)</button>
-              <button onclick="navigateTo('registration')" class="btn btn-secondary">📋 Registration &amp; Fee Details</button>
-            </div>
+          <!-- CTA Buttons -->
+          <div class="hero-cta-group">
+            <button onclick="navigateTo('submission')" class="btn btn-primary">📄 Submit Paper (Microsoft CMT)</button>
+            <button onclick="navigateTo('registration')" class="btn btn-secondary">📋 Registration &amp; Fee Details</button>
           </div>
         </div>
-
-        <!-- 2. ANIMATED TICKER MARQUEE -->
-        <div class="theme-ticker">
-          <div class="ticker-track">
-            <span class="ticker-item"><span class="ticker-dot"></span> ARTIFICIAL INTELLIGENCE &amp; MACHINE LEARNING</span>
-            <span class="ticker-item"><span class="ticker-dot"></span> QUANTUM COMPUTING &amp; INFORMATION</span>
-            <span class="ticker-item"><span class="ticker-dot"></span> SUSTAINABLE INNOVATIONS &amp; GREEN COMPUTING</span>
-            <span class="ticker-item"><span class="ticker-dot"></span> IEEE XPLORE DIGITAL LIBRARY INCLUSION</span>
-            <span class="ticker-item"><span class="ticker-dot"></span> DOUBLE-BLIND PEER REVIEW PROCESS</span>
-            <span class="ticker-item"><span class="ticker-dot"></span> SCOPUS INDEXED PROCEEDINGS</span>
-            <span class="ticker-item"><span class="ticker-dot"></span> ARTIFICIAL INTELLIGENCE &amp; MACHINE LEARNING</span>
-            <span class="ticker-item"><span class="ticker-dot"></span> QUANTUM COMPUTING &amp; INFORMATION</span>
-            <span class="ticker-item"><span class="ticker-dot"></span> SUSTAINABLE INNOVATIONS &amp; GREEN COMPUTING</span>
-            <span class="ticker-item"><span class="ticker-dot"></span> IEEE XPLORE DIGITAL LIBRARY INCLUSION</span>
-            <span class="ticker-item"><span class="ticker-dot"></span> DOUBLE-BLIND PEER REVIEW PROCESS</span>
-            <span class="ticker-item"><span class="ticker-dot"></span> SCOPUS INDEXED PROCEEDINGS</span>
-          </div>
-        </div>
-
-        <!-- 3. CONFERENCE VITAL STATS -->
-        <div class="container">
-          <div class="stats-clean-strip">
-            <div class="stat-clean-card">
-              <div class="stat-clean-num">03</div>
-              <div class="stat-clean-lbl">Thematic Research Tracks</div>
-            </div>
-            <div class="stat-clean-card">
-              <div class="stat-clean-num">02</div>
-              <div class="stat-clean-lbl">Full Conference Days</div>
-            </div>
-            <div class="stat-clean-card">
-              <div class="stat-clean-num">30+</div>
-              <div class="stat-clean-lbl">Emerging Research Topics</div>
-            </div>
-            <div class="stat-clean-card">
-              <div class="stat-clean-num">IEEE</div>
-              <div class="stat-clean-lbl">Xplore Digital Library</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. CORE RESEARCH TRACKS (3 CLEAN CARDS) -->
-        <div class="container">
-          <div style="text-align:center;margin-bottom:36px;">
-            <span class="section-label">Conference Tracks</span>
-            <h2 style="font-family:var(--font-heading);font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:800;margin-top:6px;">Call For <span class="gradient-text">Papers &amp; Research</span></h2>
-            <p style="color:var(--text-secondary);max-width:620px;margin:0 auto;font-size:0.95rem;">Submissions are invited across three multidisciplinary tracks addressing intelligent computing, quantum algorithms, and eco-friendly technologies.</p>
-          </div>
-
-          <div class="tracks-overview-grid">
-            <!-- Track 1 -->
-            <div class="track-overview-card" onclick="navigateTo('tracks')">
-              <div>
-                <div class="track-card-top">
-                  <div class="track-icon-badge">🧠</div>
-                  <span class="track-num-tag">TRACK 01</span>
-                </div>
-                <h3>AI, Vision, NLP &amp; Sustainable Computing</h3>
-                <p>Explores cutting-edge machine learning models, natural language processing, generative AI, explainable AI, and green computing architectures.</p>
-                <div class="track-topics-chips">
-                  <span class="topic-chip">Generative AI</span>
-                  <span class="topic-chip">Computer Vision</span>
-                  <span class="topic-chip">NLP &amp; LLMs</span>
-                  <span class="topic-chip">Green AI</span>
-                  <span class="topic-chip">Edge Intelligence</span>
-                </div>
-              </div>
-              <span class="track-card-link">View Track Topics →</span>
-            </div>
-
-            <!-- Track 2 -->
-            <div class="track-overview-card" onclick="navigateTo('tracks')">
-              <div>
-                <div class="track-card-top">
-                  <div class="track-icon-badge" style="background:rgba(168,85,247,0.1);border-color:rgba(168,85,247,0.3);">⚛️</div>
-                  <span class="track-num-tag" style="color:#a855f7;">TRACK 02</span>
-                </div>
-                <h3>Next-Gen Information &amp; Quantum Computing</h3>
-                <p>Focuses on quantum algorithms, qubit hardware architectures, quantum machine learning, post-quantum cryptography, and fault-tolerant quantum error correction.</p>
-                <div class="track-topics-chips">
-                  <span class="topic-chip">Quantum ML</span>
-                  <span class="topic-chip">Quantum Crypto</span>
-                  <span class="topic-chip">Qubit Simulators</span>
-                  <span class="topic-chip">Quantum Sensors</span>
-                  <span class="topic-chip">Error Mitigation</span>
-                </div>
-              </div>
-              <span class="track-card-link" style="color:#a855f7;">View Track Topics →</span>
-            </div>
-
-            <!-- Track 3 -->
-            <div class="track-overview-card" onclick="navigateTo('tracks')">
-              <div>
-                <div class="track-card-top">
-                  <div class="track-icon-badge" style="background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.3);">☁️</div>
-                  <span class="track-num-tag" style="color:#10b981;">TRACK 03</span>
-                </div>
-                <h3>Cloud, Cybersecurity &amp; Blockchain Systems</h3>
-                <p>Investigates energy-efficient data center operations, privacy-preserving distributed ledgers, zero-trust network architectures, and secure decentralized systems.</p>
-                <div class="track-topics-chips">
-                  <span class="topic-chip">Cloud Security</span>
-                  <span class="topic-chip">Zero-Trust</span>
-                  <span class="topic-chip">Blockchain</span>
-                  <span class="topic-chip">Smart Grids</span>
-                  <span class="topic-chip">Green Data Centers</span>
-                </div>
-              </div>
-              <span class="track-card-link" style="color:#10b981;">View Track Topics →</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5. CONFERENCE VALUES & STANDARDS -->
-        <div class="container">
-          <div class="pillars-clean-grid">
-            <div class="pillar-clean-card">
-              <span class="pillar-clean-icon">📖</span>
-              <h4>IEEE Xplore Digital Library</h4>
-              <p>Accepted and presented manuscripts will be submitted for inclusion into the IEEE Xplore digital repository.</p>
-            </div>
-            <div class="pillar-clean-card">
-              <span class="pillar-clean-icon">🎯</span>
-              <h4>Double-Blind Review</h4>
-              <p>Rigorous, unbiased peer review by an international technical committee ensuring top academic quality.</p>
-            </div>
-            <div class="pillar-clean-card">
-              <span class="pillar-clean-icon">🌐</span>
-              <h4>Hybrid Participation</h4>
-              <p>Join on campus in Bengaluru or present remotely via interactive global live streaming sessions.</p>
-            </div>
-            <div class="pillar-clean-card">
-              <span class="pillar-clean-icon">📜</span>
-              <h4>Global Dissemination</h4>
-              <p>Wide international indexing across prestigious academic indexing and citation databases.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6. CLEAN CTA & DEADLINES BANNER -->
-        <div class="container">
-          <div class="home-cta-box">
-            <span class="section-label" style="color:var(--accent-primary);">Call For Submissions</span>
-            <h3>Submit Your Research Manuscript</h3>
-            <p>Join distinguished academicians, industry pioneers, and research scholars worldwide. Submit your original contributions to ICIQSI 2027 via Microsoft CMT.</p>
-            <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-              <button onclick="navigateTo('submission')" class="btn btn-primary">Submit via Microsoft CMT →</button>
-              <button onclick="navigateTo('dates')" class="btn btn-secondary">📅 Important Deadlines</button>
-            </div>
-          </div>
-
-          <!-- Bottom Sequential Page Navigation -->
-          <div class="page-nav-bar" style="margin-top:40px;">
-            <span class="page-indicator-text">Page 1 of 8</span>
-            <button class="page-nav-btn" onclick="navigateTo('about')">About Conference →</button>
-          </div>
-        </div>
-
       </div>
     </section>
 
