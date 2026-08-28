@@ -221,66 +221,146 @@ a:hover { color: var(--accent-highlight); }
 .hero-full-name { font-family: var(--font-heading); font-size: clamp(0.95rem, 2vw, 1.3rem); font-weight: 500; color: var(--text-secondary); letter-spacing: 1px; margin-bottom: 12px; }
 .hero-tagline { font-size: clamp(0.95rem, 1.8vw, 1.15rem); font-weight: 400; color: var(--text-secondary); margin-bottom: 28px; }
 
-/* THEME PILLARS / THEME ELEMENTS IN HERO */
-.theme-pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin: 28px 0 34px;
-  text-align: left;
-}
-.theme-pillar-card {
-  background: rgba(15, 25, 50, 0.75);
-  border: 1px solid var(--border-glass);
-  border-radius: var(--radius-md);
-  padding: 18px 20px;
-  transition: all var(--transition-base);
-  backdrop-filter: blur(15px);
-  position: relative;
-  overflow: hidden;
-}
-.theme-pillar-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 3px;
-  background: var(--gradient-accent);
-  opacity: 0.8;
-}
-.theme-pillar-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-glow);
-  box-shadow: 0 10px 25px rgba(0, 229, 255, 0.15);
-}
-.theme-pillar-icon {
-  font-size: 1.6rem;
-  margin-bottom: 8px;
-  display: inline-block;
-}
-.theme-pillar-card h4 {
-  font-family: var(--font-heading);
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 4px;
-}
-.theme-pillar-card p {
-  font-size: 0.78rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
-}
-.theme-pillar-tags {
+/* ── THEME ELEMENTS (FLOATING PILL BADGES & ORBITALS) ── */
+.theme-elements-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin-top: 8px;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin: 24px auto 32px;
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
 }
-.theme-pillar-tag {
-  font-size: 0.68rem;
-  padding: 2px 7px;
-  border-radius: 4px;
+.theme-badges-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.theme-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 22px;
+  background: rgba(15, 25, 50, 0.65);
+  border: 1px solid var(--border-glass);
+  border-radius: 50px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: all var(--transition-base);
+  cursor: default;
+}
+.theme-pill-badge:hover {
+  transform: translateY(-3px) scale(1.03);
+  border-color: var(--accent-primary);
+  box-shadow: 0 8px 25px rgba(0, 229, 255, 0.3);
+}
+.theme-pill-badge.pill-ai { border-color: rgba(0, 229, 255, 0.35); }
+.theme-pill-badge.pill-ai:hover { box-shadow: 0 8px 25px rgba(0, 229, 255, 0.35); }
+.theme-pill-badge.pill-quantum { border-color: rgba(168, 85, 247, 0.4); }
+.theme-pill-badge.pill-quantum:hover { box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4); }
+.theme-pill-badge.pill-sustainability { border-color: rgba(16, 185, 129, 0.4); }
+.theme-pill-badge.pill-sustainability:hover { box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4); }
+
+.theme-pill-icon {
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+.theme-pill-title {
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.3px;
+}
+.theme-chips-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.theme-chip {
+  font-size: 0.76rem;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+.theme-chip:hover {
   background: rgba(0, 229, 255, 0.08);
+  border-color: rgba(0, 229, 255, 0.3);
   color: var(--accent-primary);
-  border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+/* THEME QUANTUM/AI FLOATING ORBITAL GRAPHIC */
+.quantum-orbital-system {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 580px;
+  height: 580px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.45;
+}
+.orbital-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 229, 255, 0.22);
+}
+.orbital-ring-1 {
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  animation: spinOrbit 35s linear infinite;
+  border-color: rgba(0, 229, 255, 0.25);
+}
+.orbital-ring-2 {
+  width: 76%;
+  height: 76%;
+  top: 12%; left: 12%;
+  animation: spinOrbitReverse 25s linear infinite;
+  border-color: rgba(168, 85, 247, 0.25);
+}
+.orbital-ring-3 {
+  width: 52%;
+  height: 52%;
+  top: 24%; left: 24%;
+  animation: spinOrbit 18s linear infinite;
+  border-color: rgba(16, 185, 129, 0.2);
+}
+.orbital-node {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  box-shadow: 0 0 12px var(--accent-primary);
+}
+.orbital-node-1 { top: -4px; left: 50%; background: #00e5ff; box-shadow: 0 0 12px #00e5ff; }
+.orbital-node-2 { bottom: -4px; right: 30%; background: #a855f7; box-shadow: 0 0 12px #a855f7; }
+.orbital-node-3 { top: 50%; right: -4px; background: #10b981; box-shadow: 0 0 12px #10b981; }
+@keyframes spinOrbit {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes spinOrbitReverse {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
 }
 
 .hero-meta { display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; margin-bottom: 30px; }
@@ -528,6 +608,13 @@ a:hover { color: var(--accent-highlight); }
         <div class="hero-glow hero-glow-2"></div>
         <div class="hero-glow hero-glow-3"></div>
 
+        <!-- ANIMATED QUANTUM ORBITAL GRAPHIC -->
+        <div class="quantum-orbital-system">
+          <div class="orbital-ring orbital-ring-1"><div class="orbital-node orbital-node-1"></div></div>
+          <div class="orbital-ring orbital-ring-2"><div class="orbital-node orbital-node-2"></div></div>
+          <div class="orbital-ring orbital-ring-3"><div class="orbital-node orbital-node-3"></div></div>
+        </div>
+
         <div class="hero-content">
           <div class="hero-badge">
             <span class="ieee-dot"></span>
@@ -538,37 +625,28 @@ a:hover { color: var(--accent-highlight); }
           <p class="hero-full-name">Intelligent Computing, Quantum Technologies &amp; Sustainable Innovations</p>
           <p class="hero-tagline">Shaping the Future of Intelligent Computing, Quantum Frontiers, and Planetary Sustainability</p>
 
-          <!-- NEW THEME ELEMENTS / CORE PILLARS -->
-          <div class="theme-pillars-grid">
-            <div class="theme-pillar-card">
-              <span class="theme-pillar-icon">🧠</span>
-              <h4>Intelligent Computing</h4>
-              <p>Next-gen AI, deep vision systems, LLMs, neural networks, and cognitive architectures.</p>
-              <div class="theme-pillar-tags">
-                <span class="theme-pillar-tag">Generative AI</span>
-                <span class="theme-pillar-tag">Computer Vision</span>
-                <span class="theme-pillar-tag">NLP</span>
+          <!-- THEME ELEMENTS (FLOATING THEME BADGES & TECH CHIPS) -->
+          <div class="theme-elements-container">
+            <div class="theme-badges-row">
+              <div class="theme-pill-badge pill-ai">
+                <span class="theme-pill-icon">🧠</span>
+                <span class="theme-pill-title">Intelligent Computing</span>
+              </div>
+              <div class="theme-pill-badge pill-quantum">
+                <span class="theme-pill-icon">⚛️</span>
+                <span class="theme-pill-title">Quantum Technologies</span>
+              </div>
+              <div class="theme-pill-badge pill-sustainability">
+                <span class="theme-pill-icon">🌱</span>
+                <span class="theme-pill-title">Sustainable Innovations</span>
               </div>
             </div>
-            <div class="theme-pillar-card">
-              <span class="theme-pillar-icon">⚛️</span>
-              <h4>Quantum Technologies</h4>
-              <p>Quantum algorithms, quantum cryptography, quantum machine learning, and qubit hardware.</p>
-              <div class="theme-pillar-tags">
-                <span class="theme-pillar-tag">Quantum ML</span>
-                <span class="theme-pillar-tag">Q-Crypto</span>
-                <span class="theme-pillar-tag">Q-Opt</span>
-              </div>
-            </div>
-            <div class="theme-pillar-card">
-              <span class="theme-pillar-icon">🌱</span>
-              <h4>Sustainable Innovations</h4>
-              <p>Energy-efficient data centers, green computing, zero-carbon AI, and eco-friendly systems.</p>
-              <div class="theme-pillar-tags">
-                <span class="theme-pillar-tag">Green AI</span>
-                <span class="theme-pillar-tag">Carbon-Aware</span>
-                <span class="theme-pillar-tag">Eco-Cloud</span>
-              </div>
+            <div class="theme-chips-row">
+              <span class="theme-chip">✦ Generative AI</span>
+              <span class="theme-chip">✦ Quantum Cryptography</span>
+              <span class="theme-chip">✦ Green Cloud Computing</span>
+              <span class="theme-chip">✦ Quantum ML</span>
+              <span class="theme-chip">✦ Carbon-Aware AI</span>
             </div>
           </div>
 
