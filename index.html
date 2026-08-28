@@ -157,41 +157,7 @@ a:hover { color: var(--accent-highlight); }
   padding: 0 0 70px;
 }
 
-/* ── PAGE FOOTER PAGINATION (Go through every page) ── */
-.page-nav-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 60px;
-  padding-top: 30px;
-  border-top: 1px solid var(--border-glass);
-}
-.page-nav-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-glass);
-  color: var(--text-secondary);
-  padding: 10px 20px;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  font-family: var(--font-body);
-  font-size: 0.88rem;
-  font-weight: 600;
-  transition: all var(--transition-fast);
-}
-.page-nav-btn:hover {
-  background: var(--bg-glass-hover);
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
-  transform: translateY(-2px);
-}
-.page-indicator-text {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  font-weight: 500;
-}
+
 
 /* ============================================================
    PAGE 1: HOME (EXCLUSIVE FULL-SCREEN HERO BANNER)
@@ -206,13 +172,21 @@ a:hover { color: var(--accent-highlight); }
   overflow: hidden;
   padding: 60px 24px;
   text-align: center;
+  background-color: #060b18;
+}
+
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   background-image: 
-    linear-gradient(180deg, rgba(6, 11, 24, 0.45) 0%, rgba(6, 11, 24, 0.78) 55%, #060b18 100%),
-    radial-gradient(ellipse at 50% 35%, rgba(0, 229, 255, 0.15) 0%, transparent 65%),
+    linear-gradient(180deg, rgba(6, 11, 24, 0.04) 0%, rgba(6, 11, 24, 0.35) 50%, #060b18 96%),
     url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=80');
   background-size: cover;
   background-position: center 30%;
   background-repeat: no-repeat;
+  filter: brightness(1.28) contrast(1.18);
 }
 
 .hero-inner {
@@ -760,14 +734,14 @@ a:hover { color: var(--accent-highlight); }
           
           <h1 class="hero-main-title">International Conference on</h1>
           <div class="hero-main-acronym">ICIQSI 2027</div>
-          <h2 class="hero-main-theme">Intelligent Computing, Quantum Technologies &amp; Sustainable Innovations</h2>
-          <p class="hero-main-desc">A premier multidisciplinary international forum connecting researchers, engineers, and scientists to advance artificial intelligence, quantum frontiers, and green sustainable computing.</p>
+          <h2 class="hero-main-theme">Intelligent Computing, Quantum Technologies, and Sustainable Innovations</h2>
+          <p class="hero-main-desc">Shaping the Future of Intelligent Computing and Sustainability — Bringing together researchers, academicians, industry professionals, and students to advance Artificial Intelligence, Quantum Computing, and Green Technologies.</p>
 
           <!-- Info Badges Strip -->
           <div class="hero-info-strip">
             <div class="hero-info-pill">
               <span class="pill-icon">📅</span>
-              <span><strong>September 15–16, 2027</strong></span>
+              <span><strong>15 &amp; 16th September 2027</strong></span>
             </div>
             <div class="hero-info-pill">
               <span class="pill-icon">📍</span>
@@ -797,7 +771,7 @@ a:hover { color: var(--accent-highlight); }
         <div class="page-header-glow g2"></div>
         <div class="container">
           <h1>About the <span>Conference</span></h1>
-          <p>Bridging Research &amp; Real-World Innovation through a multidisciplinary international platform.</p>
+          <p>Shaping the Future of Intelligent Computing and Sustainability</p>
         </div>
       </header>
       <div class="page-body container">
@@ -805,12 +779,12 @@ a:hover { color: var(--accent-highlight); }
           <div class="glass-card about-card">
             <div class="about-card-icon">🔬</div>
             <h3>Conference Theme</h3>
-            <p>Intelligent Computing, Quantum Technologies, and Sustainable Innovations highlights the role of emerging technologies in creating a smarter, more sustainable future. It brings together diverse disciplines — Artificial Intelligence, Machine Learning, Quantum Computing, and intelligent systems — to bridge the gap between research and real-world applications. The theme also emphasizes sustainable technologies, including green computing, energy-efficient data centers, renewable energy, and environmentally responsible digital transformation.</p>
+            <p>Intelligent Computing, Quantum Technologies, and Sustainable Innovations is a multidisciplinary theme that highlights the role of emerging technologies in creating a smarter, more sustainable future. It brings together researchers, academicians, industry professionals, and students to share innovative ideas and practical solutions in areas such as Artificial Intelligence, Machine Learning, Quantum Computing, and intelligent systems. The theme also emphasizes sustainable technologies, including green computing, energy-efficient data centers, renewable energy, and environmentally responsible digital transformation. By encouraging collaboration across diverse disciplines, it aims to bridge the gap between research and real-world applications. Ultimately, this theme seeks to inspire innovations that improve quality of life, support sustainable development, and address the technological challenges of tomorrow.</p>
           </div>
           <div class="glass-card about-card">
             <div class="about-card-icon">🏛️</div>
-            <h3>About NMKRV Degree College</h3>
-            <p>NMKRV Degree College, Bengaluru, is one of Karnataka's premier institutions of higher education, established in 1973 under the aegis of the Rashtreeya Sikshana Samithi Trust (RSST). Affiliated with Bengaluru University and accredited by NAAC, the college is committed to academic excellence, innovation, and holistic development. The Department of Computer Science and Computer Applications is at the forefront of research and technology education.</p>
+            <h3>About NMKRV</h3>
+            <p>NMKRV Degree College, Bengaluru, is one of Karnataka's premier institutions of higher education, established in 1973 under the aegis of the Rashtreeya Sikshana Samithi Trust (RSST). Affiliated with Bengaluru University and accredited by NAAC, the college is committed to academic excellence, innovation, and holistic development.</p>
           </div>
         </div>
 
@@ -832,12 +806,6 @@ a:hover { color: var(--accent-highlight); }
             <div class="stat-label">Years of NMKRV Degree College</div>
           </div>
         </div>
-
-        <div class="page-nav-bar">
-          <button class="page-nav-btn" onclick="navigateTo('home')">← Home</button>
-          <span class="page-indicator-text">Page 2 of 8</span>
-          <button class="page-nav-btn" onclick="navigateTo('tracks')">Tracks →</button>
-        </div>
       </div>
     </section>
 
@@ -849,8 +817,8 @@ a:hover { color: var(--accent-highlight); }
         <div class="page-header-glow g1"></div>
         <div class="page-header-glow g2"></div>
         <div class="container">
-          <h1>Research <span>Tracks</span></h1>
-          <p>Three focused tracks covering the most impactful areas of computing research and innovation.</p>
+          <h1>Conference <span>Themes &amp; Tracks</span></h1>
+          <p>Conference tracks, but not limited to:</p>
         </div>
       </header>
       <div class="page-body container">
@@ -860,15 +828,15 @@ a:hover { color: var(--accent-highlight); }
             <div class="track-card-header">
               <div class="track-number">01</div>
               <div class="track-icon">🧠</div>
-              <h3>AI, Computer Vision, NLP &amp; Sustainable Computing Systems</h3>
-              <p>Explores the latest advancements in AI, Computer Vision, NLP, and sustainable computing — developing smart, efficient, and environmentally responsible solutions for real-world challenges.</p>
+              <h3>AI, Computer Vision, NLP, and Sustainable Computing Systems</h3>
+              <p>This track explores the latest advancements in Artificial Intelligence, Computer Vision, Natural Language Processing, and sustainable computing. It encourages innovative research that develops smart, efficient, and environmentally responsible solutions for real-world challenges.</p>
             </div>
             <div class="track-topics">
               <div class="track-topics-divider"></div>
               <ul>
                 <li>Computer Vision</li>
                 <li>Image Processing</li>
-                <li>NLP &amp; Large Language Models</li>
+                <li>NLP and Large Language Models</li>
                 <li>Generative AI</li>
                 <li>Explainable AI</li>
                 <li>Green AI</li>
@@ -878,7 +846,7 @@ a:hover { color: var(--accent-highlight); }
                 <li>Green Data Centers</li>
                 <li>AI for Smart Energy Management</li>
                 <li>Carbon-Aware Computing</li>
-                <li>Sustainable Cloud &amp; Edge Computing</li>
+                <li>Sustainable Cloud and Edge Computing</li>
               </ul>
             </div>
             <button class="track-expand-btn" aria-label="Expand track details">
@@ -892,8 +860,8 @@ a:hover { color: var(--accent-highlight); }
             <div class="track-card-header">
               <div class="track-number">02</div>
               <div class="track-icon">⚛️</div>
-              <h3>Next-Generation Information &amp; Quantum Computing Technologies</h3>
-              <p>Explores the latest developments in information systems and quantum computing — advancing faster, smarter, and more secure technologies for the future of digital transformation.</p>
+              <h3>Next-Generation Information and Quantum Computing Technologies</h3>
+              <p>This track explores the latest developments in information systems and quantum computing. The track encourages innovative research that advances faster, smarter, and more secure technologies for the future of digital transformation.</p>
             </div>
             <div class="track-topics">
               <div class="track-topics-divider"></div>
@@ -916,22 +884,22 @@ a:hover { color: var(--accent-highlight); }
             <div class="track-card-header">
               <div class="track-number">03</div>
               <div class="track-icon">🔐</div>
-              <h3>Cloud Computing, Cybersecurity &amp; Blockchain Technologies</h3>
-              <p>Focuses on the latest advances in cloud computing, cybersecurity, and blockchain — building secure, reliable, and scalable digital solutions for today's connected world.</p>
+              <h3>Cloud Computing, Cybersecurity, and Blockchain Technologies</h3>
+              <p>This track focuses on the latest advances in cloud computing, cybersecurity, and blockchain. It encourages research that builds secure, reliable, and scalable digital solutions for today's connected world.</p>
             </div>
             <div class="track-topics">
               <div class="track-topics-divider"></div>
               <ul>
                 <li>Internet of Things (IoT)</li>
                 <li>Industrial IoT</li>
-                <li>Edge &amp; Fog Computing</li>
+                <li>Edge and Fog Computing</li>
                 <li>Digital Twins</li>
                 <li>Smart Manufacturing</li>
                 <li>Autonomous Systems</li>
                 <li>AI Security</li>
                 <li>Cybersecurity</li>
                 <li>Blockchain Technologies</li>
-                <li>Privacy-Preserving ML</li>
+                <li>Privacy-Preserving Machine Learning</li>
                 <li>Quantum-Safe Cryptography</li>
               </ul>
             </div>
@@ -940,12 +908,6 @@ a:hover { color: var(--accent-highlight); }
               <span class="arrow">▼</span>
             </button>
           </div>
-        </div>
-
-        <div class="page-nav-bar">
-          <button class="page-nav-btn" onclick="navigateTo('about')">← About</button>
-          <span class="page-indicator-text">Page 3 of 8</span>
-          <button class="page-nav-btn" onclick="navigateTo('dates')">Dates →</button>
         </div>
       </div>
     </section>
@@ -984,12 +946,6 @@ a:hover { color: var(--accent-highlight); }
             <div class="timeline-title">Camera-Ready Paper &amp; Registration</div>
             <div class="timeline-desc">Submit the final camera-ready version and complete your registration.</div>
           </div>
-        </div>
-
-        <div class="page-nav-bar">
-          <button class="page-nav-btn" onclick="navigateTo('tracks')">← Tracks</button>
-          <span class="page-indicator-text">Page 4 of 8</span>
-          <button class="page-nav-btn" onclick="navigateTo('registration')">Registration →</button>
         </div>
       </div>
     </section>
@@ -1052,12 +1008,6 @@ a:hover { color: var(--accent-highlight); }
           <div class="bank-row"><span class="label">IFSC Code</span><span class="value">MAHB0001374</span></div>
           <div class="bank-row"><span class="label">Branch</span><span class="value">3rd Block Jayanagar, Bangalore – 560021</span></div>
         </div>
-
-        <div class="page-nav-bar">
-          <button class="page-nav-btn" onclick="navigateTo('dates')">← Dates</button>
-          <span class="page-indicator-text">Page 5 of 8</span>
-          <button class="page-nav-btn" onclick="navigateTo('submission')">Submission →</button>
-        </div>
       </div>
     </section>
 
@@ -1109,12 +1059,6 @@ a:hover { color: var(--accent-highlight); }
           <h3>Published in IEEE Xplore Digital Library</h3>
           <p>Accepted papers will be submitted for inclusion into IEEE Xplore, subject to meeting IEEE Xplore's scope and quality requirements. IEEE Xplore is one of the world's most widely used research databases, providing access to millions of technical documents.</p>
           <div class="ieee-xplore-badge">⚡ IEEE Xplore Digital Library</div>
-        </div>
-
-        <div class="page-nav-bar">
-          <button class="page-nav-btn" onclick="navigateTo('registration')">← Registration</button>
-          <span class="page-indicator-text">Page 6 of 8</span>
-          <button class="page-nav-btn" onclick="navigateTo('committee')">Committee →</button>
         </div>
       </div>
     </section>
@@ -1199,12 +1143,6 @@ a:hover { color: var(--accent-highlight); }
             <div class="glass-card committee-member"><div class="member-avatar">AJ</div><div class="member-info"><h4>Prof. Ajay</h4><div class="member-role">Organizing Committee</div><div class="member-affiliation">Dept. of Computer Science, NMKRV Degree College</div></div></div>
           </div>
         </div>
-
-        <div class="page-nav-bar">
-          <button class="page-nav-btn" onclick="navigateTo('submission')">← Submission</button>
-          <span class="page-indicator-text">Page 7 of 8</span>
-          <button class="page-nav-btn" onclick="navigateTo('contact')">Contact →</button>
-        </div>
       </div>
     </section>
 
@@ -1250,12 +1188,6 @@ a:hover { color: var(--accent-highlight); }
           <div class="contact-map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5!2d77.58!3d12.94!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae158b11e35d2f%3A0x4da7ef89b5022e9e!2sNMKRV%20Degree%20College!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="NMKRV Degree College Location" allowfullscreen></iframe>
           </div>
-        </div>
-
-        <div class="page-nav-bar">
-          <button class="page-nav-btn" onclick="navigateTo('committee')">← Committee</button>
-          <span class="page-indicator-text">Page 8 of 8</span>
-          <button class="page-nav-btn" onclick="navigateTo('home')">Back to Home ⟲</button>
         </div>
       </div>
     </section>
