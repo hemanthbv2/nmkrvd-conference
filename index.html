@@ -221,89 +221,8 @@ a:hover { color: var(--accent-highlight); }
 .hero-full-name { font-family: var(--font-heading); font-size: clamp(0.95rem, 2vw, 1.3rem); font-weight: 500; color: var(--text-secondary); letter-spacing: 1px; margin-bottom: 12px; }
 .hero-tagline { font-size: clamp(0.95rem, 1.8vw, 1.15rem); font-weight: 400; color: var(--text-secondary); margin-bottom: 28px; }
 
-/* ── THEME ELEMENTS (FLOATING PILL BADGES & TECH CHIPS) ── */
-.theme-elements-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  margin: 24px auto 32px;
-  position: relative;
-  z-index: 2;
-  max-width: 860px;
-}
-.theme-badges-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-.theme-pill-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 22px;
-  background: rgba(15, 25, 50, 0.65);
-  border: 1px solid var(--border-glass);
-  border-radius: 50px;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-  transition: all var(--transition-base);
-  cursor: default;
-}
-.theme-pill-badge:hover {
-  transform: translateY(-3px) scale(1.03);
-  border-color: var(--accent-primary);
-  box-shadow: 0 8px 25px rgba(0, 229, 255, 0.3);
-}
-.theme-pill-badge.pill-ai { border-color: rgba(0, 229, 255, 0.35); }
-.theme-pill-badge.pill-quantum { border-color: rgba(168, 85, 247, 0.4); }
-.theme-pill-badge.pill-sustainability { border-color: rgba(16, 185, 129, 0.4); }
-
-.theme-pill-icon {
-  font-size: 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-}
-.theme-pill-title {
-  font-family: var(--font-heading);
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: 0.3px;
-}
-.theme-chips-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-.theme-chip {
-  font-size: 0.76rem;
-  font-weight: 500;
-  padding: 4px 12px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  color: var(--text-secondary);
-  transition: all var(--transition-fast);
-}
-.theme-chip:hover {
-  background: rgba(0, 229, 255, 0.08);
-  border-color: rgba(0, 229, 255, 0.3);
-  color: var(--accent-primary);
-}
-
-/* ── MOVING BACKGROUND ELEMENTS (QUANTUM ATOMS, GLYPHS, NEURAL NODES) ── */
-.bg-floating-elements {
+/* ── GRAPHICAL MOVING BACKGROUND ELEMENTS (QUANTUM, AI & SUSTAINABILITY) ── */
+.bg-graphic-elements {
   position: absolute;
   top: 0;
   left: 0;
@@ -313,63 +232,185 @@ a:hover { color: var(--accent-highlight); }
   overflow: hidden;
   z-index: 1;
 }
-.bg-atom-orbit {
+
+/* 1. 3D Rotating Quantum Gyroscope Atom (Top-Right) */
+.quantum-gyro-wrapper {
   position: absolute;
+  top: 6%;
+  right: 6%;
+  width: 320px;
+  height: 320px;
+  perspective: 800px;
+  opacity: 0.65;
+  animation: gyroFloat 16s ease-in-out infinite alternate;
+}
+.gyro-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  border: 1px dashed rgba(0, 229, 255, 0.18);
+  border: 1.5px solid rgba(0, 229, 255, 0.4);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
 }
-.bg-atom-1 {
-  width: 420px; height: 420px;
-  top: -80px; left: -80px;
-  animation: floatDrift1 24s ease-in-out infinite alternate, spinOrbit 40s linear infinite;
+.gyro-ring-1 {
+  transform: rotateX(65deg) rotateY(20deg);
+  animation: spinGyro1 12s linear infinite;
+  border-color: rgba(0, 229, 255, 0.45);
 }
-.bg-atom-2 {
-  width: 500px; height: 500px;
-  bottom: -120px; right: -100px;
-  border-color: rgba(168, 85, 247, 0.16);
-  animation: floatDrift2 28s ease-in-out infinite alternate, spinOrbitReverse 35s linear infinite;
+.gyro-ring-2 {
+  transform: rotateX(65deg) rotateY(-40deg);
+  animation: spinGyro2 15s linear infinite;
+  border-color: rgba(168, 85, 247, 0.45);
 }
-.bg-atom-3 {
-  width: 280px; height: 280px;
-  top: 20%; right: 12%;
-  border-color: rgba(16, 185, 129, 0.15);
-  animation: floatDrift3 20s ease-in-out infinite alternate, spinOrbit 25s linear infinite;
+.gyro-ring-3 {
+  transform: rotateX(25deg) rotateY(65deg);
+  animation: spinGyro3 18s linear infinite;
+  border-color: rgba(16, 185, 129, 0.4);
 }
-
-.bg-glyph {
+.gyro-nucleus {
   position: absolute;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  opacity: 0.22;
-  user-select: none;
-  filter: blur(0.3px);
-  text-shadow: 0 0 15px currentColor;
-  animation: floatGlyph 16s ease-in-out infinite alternate;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #00e5ff 0%, #7c3aed 70%, transparent 100%);
+  box-shadow: 0 0 25px #00e5ff, 0 0 45px #7c3aed;
+  animation: nucleusPulse 3s ease-in-out infinite alternate;
 }
-.bg-glyph.g1 { top: 18%; left: 12%; font-size: 2.2rem; color: #00e5ff; animation-duration: 14s; animation-delay: 0s; }
-.bg-glyph.g2 { top: 65%; left: 8%; font-size: 2.6rem; color: #a855f7; animation-duration: 18s; animation-delay: -3s; }
-.bg-glyph.g3 { top: 25%; right: 14%; font-size: 2rem; color: #10b981; animation-duration: 16s; animation-delay: -5s; }
-.bg-glyph.g4 { top: 72%; right: 18%; font-size: 2.4rem; color: #38bdf8; animation-duration: 20s; animation-delay: -8s; }
-.bg-glyph.g5 { top: 45%; left: 3%; font-size: 1.8rem; color: #7c3aed; animation-duration: 15s; animation-delay: -2s; }
-.bg-glyph.g6 { top: 82%; left: 45%; font-size: 1.9rem; color: #ec4899; animation-duration: 22s; animation-delay: -6s; }
-.bg-glyph.g7 { top: 12%; left: 60%; font-size: 2rem; color: #00e5ff; animation-duration: 17s; animation-delay: -4s; }
+.gyro-qubit {
+  position: absolute;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  top: -4px; left: 50%;
+  background: #fff;
+  box-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff;
+}
 
-@keyframes floatGlyph {
-  0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 0.15; }
-  50% { transform: translateY(-30px) rotate(8deg) scale(1.15); opacity: 0.35; }
-  100% { transform: translateY(20px) rotate(-8deg) scale(0.95); opacity: 0.2; }
+/* 2. Floating 3D Geometric Wireframe Cube (Bottom-Left) */
+.floating-cube-wrapper {
+  position: absolute;
+  bottom: 12%;
+  left: 6%;
+  width: 140px;
+  height: 140px;
+  perspective: 600px;
+  opacity: 0.5;
+  animation: cubeDrift 20s ease-in-out infinite alternate;
 }
-@keyframes floatDrift1 {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(60px, 40px); }
+.floating-cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateCube 22s linear infinite;
 }
-@keyframes floatDrift2 {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(-50px, -40px); }
+.cube-face {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  background: rgba(0, 229, 255, 0.03);
+  box-shadow: inset 0 0 15px rgba(0, 229, 255, 0.08);
 }
-@keyframes floatDrift3 {
+.cube-front  { transform: rotateY(0deg) translateZ(60px); }
+.cube-back   { transform: rotateY(180deg) translateZ(60px); }
+.cube-right  { transform: rotateY(90deg) translateZ(60px); border-color: rgba(168, 85, 247, 0.35); }
+.cube-left   { transform: rotateY(-90deg) translateZ(60px); border-color: rgba(168, 85, 247, 0.35); }
+.cube-top    { transform: rotateX(90deg) translateZ(60px); border-color: rgba(16, 185, 129, 0.35); }
+.cube-bottom { transform: rotateX(-90deg) translateZ(60px); border-color: rgba(16, 185, 129, 0.35); }
+
+/* 3. Floating Mini Quantum Atom (Center-Left) */
+.mini-atom-wrapper {
+  position: absolute;
+  top: 28%;
+  left: 14%;
+  width: 130px;
+  height: 130px;
+  opacity: 0.45;
+  animation: miniAtomFloat 14s ease-in-out infinite alternate;
+}
+.mini-atom-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px dashed rgba(168, 85, 247, 0.45);
+  animation: spinGyro1 10s linear infinite;
+}
+.mini-atom-ring:nth-child(2) {
+  border-color: rgba(0, 229, 255, 0.45);
+  animation: spinGyro2 14s linear infinite;
+  transform: rotate(60deg);
+}
+.mini-atom-core {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #a855f7;
+  box-shadow: 0 0 15px #a855f7;
+}
+
+/* 4. Hexagonal Tech Mesh & Energy Wave Stream (Bottom) */
+.energy-wave-stream {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  opacity: 0.3;
+  background: radial-gradient(ellipse at 50% 100%, rgba(0, 229, 255, 0.25) 0%, rgba(124, 58, 237, 0.15) 45%, transparent 75%);
+  pointer-events: none;
+}
+.circuit-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.7), rgba(168, 85, 247, 0.7), transparent);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+  animation: circuitFlow 8s linear infinite;
+}
+.circuit-line-1 { top: 35%; left: 0; width: 60%; animation-duration: 9s; }
+.circuit-line-2 { top: 65%; right: 0; width: 70%; animation-duration: 12s; animation-delay: -3s; }
+.circuit-line-3 { top: 85%; left: 15%; width: 50%; animation-duration: 7s; animation-delay: -5s; }
+
+/* KEYFRAME ANIMATIONS FOR BG GRAPHICS */
+@keyframes spinGyro1 {
+  0% { transform: rotateX(65deg) rotateY(20deg) rotateZ(0deg); }
+  100% { transform: rotateX(65deg) rotateY(20deg) rotateZ(360deg); }
+}
+@keyframes spinGyro2 {
+  0% { transform: rotateX(65deg) rotateY(-40deg) rotateZ(0deg); }
+  100% { transform: rotateX(65deg) rotateY(-40deg) rotateZ(360deg); }
+}
+@keyframes spinGyro3 {
+  0% { transform: rotateX(25deg) rotateY(65deg) rotateZ(0deg); }
+  100% { transform: rotateX(25deg) rotateY(65deg) rotateZ(360deg); }
+}
+@keyframes rotateCube {
+  0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+}
+@keyframes gyroFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-25px) rotate(12deg); }
+}
+@keyframes cubeDrift {
   0% { transform: translate(0, 0); }
-  100% { transform: translate(30px, -35px); }
+  100% { transform: translate(40px, -30px); }
+}
+@keyframes miniAtomFloat {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(20px) scale(1.1); }
+}
+@keyframes nucleusPulse {
+  0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+}
+@keyframes circuitFlow {
+  0% { opacity: 0; transform: translateX(-40%); }
+  50% { opacity: 0.8; }
+  100% { opacity: 0; transform: translateX(40%); }
 }
 @keyframes spinOrbit {
   0% { transform: rotate(0deg); }
@@ -625,18 +666,41 @@ a:hover { color: var(--accent-highlight); }
         <div class="hero-glow hero-glow-2"></div>
         <div class="hero-glow hero-glow-3"></div>
 
-        <!-- MOVING BACKGROUND ELEMENTS (FLOATING ATOMS & THEME GLYPHS) -->
-        <div class="bg-floating-elements">
-          <div class="bg-atom-orbit bg-atom-1"></div>
-          <div class="bg-atom-orbit bg-atom-2"></div>
-          <div class="bg-atom-orbit bg-atom-3"></div>
-          <span class="bg-glyph g1">|ψ⟩</span>
-          <span class="bg-glyph g2">0101</span>
-          <span class="bg-glyph g3">⚛</span>
-          <span class="bg-glyph g4">|0⟩</span>
-          <span class="bg-glyph g5">∑</span>
-          <span class="bg-glyph g6">🌿</span>
-          <span class="bg-glyph g7">🧠</span>
+        <!-- GRAPHICAL MOVING BACKGROUND ELEMENTS -->
+        <div class="bg-graphic-elements">
+          <!-- 3D Rotating Quantum Gyroscope Atom -->
+          <div class="quantum-gyro-wrapper">
+            <div class="gyro-ring gyro-ring-1"><div class="gyro-qubit"></div></div>
+            <div class="gyro-ring gyro-ring-2"><div class="gyro-qubit"></div></div>
+            <div class="gyro-ring gyro-ring-3"><div class="gyro-qubit"></div></div>
+            <div class="gyro-nucleus"></div>
+          </div>
+
+          <!-- Floating 3D Geometric Wireframe Cube -->
+          <div class="floating-cube-wrapper">
+            <div class="floating-cube">
+              <div class="cube-face cube-front"></div>
+              <div class="cube-face cube-back"></div>
+              <div class="cube-face cube-right"></div>
+              <div class="cube-face cube-left"></div>
+              <div class="cube-face cube-top"></div>
+              <div class="cube-face cube-bottom"></div>
+            </div>
+          </div>
+
+          <!-- Floating Mini Quantum Atom -->
+          <div class="mini-atom-wrapper">
+            <div class="mini-atom-ring"></div>
+            <div class="mini-atom-ring"></div>
+            <div class="mini-atom-core"></div>
+          </div>
+
+          <!-- Circuit Energy Wave Stream -->
+          <div class="energy-wave-stream">
+            <div class="circuit-line circuit-line-1"></div>
+            <div class="circuit-line circuit-line-2"></div>
+            <div class="circuit-line circuit-line-3"></div>
+          </div>
         </div>
 
         <div class="hero-content">
@@ -648,31 +712,6 @@ a:hover { color: var(--accent-highlight); }
           <span class="hero-acronym">ICIQSI 2027</span>
           <p class="hero-full-name">Intelligent Computing, Quantum Technologies &amp; Sustainable Innovations</p>
           <p class="hero-tagline">Shaping the Future of Intelligent Computing, Quantum Frontiers, and Planetary Sustainability</p>
-
-          <!-- THEME ELEMENTS (FLOATING THEME BADGES & TECH CHIPS) -->
-          <div class="theme-elements-container">
-            <div class="theme-badges-row">
-              <div class="theme-pill-badge pill-ai">
-                <span class="theme-pill-icon">🧠</span>
-                <span class="theme-pill-title">Intelligent Computing</span>
-              </div>
-              <div class="theme-pill-badge pill-quantum">
-                <span class="theme-pill-icon">⚛️</span>
-                <span class="theme-pill-title">Quantum Technologies</span>
-              </div>
-              <div class="theme-pill-badge pill-sustainability">
-                <span class="theme-pill-icon">🌱</span>
-                <span class="theme-pill-title">Sustainable Innovations</span>
-              </div>
-            </div>
-            <div class="theme-chips-row">
-              <span class="theme-chip">✦ Generative AI</span>
-              <span class="theme-chip">✦ Quantum Cryptography</span>
-              <span class="theme-chip">✦ Green Cloud Computing</span>
-              <span class="theme-chip">✦ Quantum ML</span>
-              <span class="theme-chip">✦ Carbon-Aware AI</span>
-            </div>
-          </div>
 
           <div class="hero-meta">
             <div class="hero-meta-item">
